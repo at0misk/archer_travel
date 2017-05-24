@@ -32,6 +32,7 @@
 		margin-top: 50px;
 	}
 	.imgDiv{
+		background: lightgrey;
 		position: relative;
 		overflow: hidden;
 		width: 21%;
@@ -60,12 +61,19 @@
 		margin-bottom: 50px;
 	}
 	.breakRow{
-		background: -webkit-linear-gradient(left, #132e43, #1bb1d1);
-		color: white;
+/*		background: -webkit-linear-gradient(left, #132e43, #1bb1d1);
+		color: white;*/
 	}
 	.breakRow h1{
 		margin-bottom: 20px;
 		text-align: center;
+	}
+	.imgRow a{
+		color: black;
+	}
+	.description{
+		margin: 20px 0;
+		font-size: 20px;
 	}
 </style>
 <div class="row landingRow">
@@ -103,19 +111,19 @@
 	</div>
 	<div class="container thirdCont">
 		<div class="row imgRow">
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('beach.jpg') %></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('lake.jpg') %></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sydney.jpg') %></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sf.jpg') %></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('beach.jpg') %><div class="description">Beach</div></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('lake.jpg') %><div class="description">Lake</div></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sydney.jpg') %><div class="description">Sydney</div></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sf.jpg') %><div class="description">San Fransisco</div></div></a>
 		</div>
 		<div class="row imgRow">
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg') %></div>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg') %><div class="description">China</div></div>
 			</a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg') %></div>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg') %><div class="description">New York City</div></div>
 			</a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg') %></div>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg') %><div class="description">Las Vegas</div></div>
 			</a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg') %></div>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg') %><div class="description">City</div></div>
 			</a>
 		</div>
 	</div>
