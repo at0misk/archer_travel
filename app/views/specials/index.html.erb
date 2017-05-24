@@ -1,0 +1,87 @@
+<style type="text/css">
+	.landingRow{
+		/*background: blue;*/
+		background-image: url('/assets/background.png');
+		height: 50px;
+	}
+	.landingDiv{
+		/*color: white;*/
+		margin-top: 80px;
+		text-align: justify;
+	}
+	.left{
+		text-align: center;
+	}
+	.secondRow{
+		/*height: 5000px;*/
+		text-align: center;
+	}
+	.headerTop{
+		margin-top: 0px;
+	}
+	.modalButtons{
+		text-align: center;
+	}
+	.specialBox{
+		height: 400px;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		/*border: 1px solid black;*/
+	    width: 45%;
+	    margin: 2%;
+		transition: all 0.3s;
+		padding: 0px;
+		position: relative;
+		color: transparent;
+		/*word-break:break-all;*/
+	}
+	.specialBox img{
+		  max-width: 100%;
+		  -moz-transition: all 0.3s;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+	}
+	.specialBox:hover img{
+		  -moz-transform: scale(1.1);
+		  -webkit-transform: scale(1.1);
+		  transform: scale(1.1);
+		  opacity: 0.3;
+	}
+	.specialBox:hover{
+		color: black;
+	}
+	.specialBox h2{
+		position: absolute;
+    	top: 0;
+    	margin: 5% 0% 0% 5%;
+	}
+	.specialBox p{
+		position: absolute;
+    	/*bottom: 100;*/
+    	text-align: justify;
+    	margin: 15% 0% 0% 2%;
+    	padding: 3%;
+	}
+	.testing{
+		height: 5000px;
+	}
+</style>
+	<div class="row landingRow">
+	</div>
+	<div class="container">
+	<div class="row">
+	<% x = 0 %>
+	<% @specials.each do |val| %>
+		<a href="#"><div class="col-sm-6 specialBox"><h2><%= val.title %></h2><p><%= val.description %></p><%= image_tag( val.image.url ) %></div></a>
+		<% x += 1 %>
+		<% if x == 2 %>
+		</div>
+		<div class="row">
+			<% x = 0 %>
+		<% elsif x == @specials.length %>
+			</div>
+		<% end %>
+	<% end %>
+	</div>
+	</div>
+<!-- 	<div class="testing"></div> -->

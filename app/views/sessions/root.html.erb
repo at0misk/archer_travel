@@ -15,6 +15,9 @@
 		color: #333;
 		margin-bottom: 50px;
 	}
+	.secondDiv p{
+		text-align: justify;
+	}
 	.right{
 		text-align: center;
 	}
@@ -63,6 +66,7 @@
 	.breakRow{
 /*		background: -webkit-linear-gradient(left, #132e43, #1bb1d1);
 		color: white;*/
+		margin-top: 2%;
 	}
 	.breakRow h1{
 		margin-bottom: 20px;
@@ -74,6 +78,13 @@
 	.description{
 		margin: 20px 0;
 		font-size: 20px;
+	}
+	.specialHeader{
+		text-align: center;
+	}
+	.specialRow{
+		background: lightgrey;
+    	padding: 2%;
 	}
 </style>
 <div class="row landingRow">
@@ -102,6 +113,19 @@
 		</div>
 	</div>
 </div>
+<% if @special %>
+<div class="row specialRow">
+	<div class="container">
+		<div class="col-sm-6 specialImageDiv">
+			<a href="#"><%= image_tag(@special.image.url) %></a>
+		</div>
+		<div class="col-sm-6">
+			<h3 class="specialHeader"><%= @special.title %></h3>
+			<p><%= @special.description %></p>
+		</div>
+	</div>
+</div>
+<% end %>
 <div class="row thirdRow">
 	<div class="row breakRow">
 		<div class="container">
