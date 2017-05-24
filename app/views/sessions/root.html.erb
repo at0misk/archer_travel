@@ -1,0 +1,122 @@
+<style type="text/css">
+	.landingRow{
+		/*background: blue;*/
+		background-image: url('/assets/background.png');
+		height: 400px;
+	}
+	.landingDiv{
+		color: white;
+		margin-top: 100px;
+		text-align: justify;
+	}
+	.secondRow{
+		height: auto;
+		text-align: center;
+		color: #333;
+		margin-bottom: 50px;
+	}
+	.right{
+		text-align: center;
+	}
+	.border{
+	    width: 125px;
+	    height: 125px;
+	    font-size: 50px;
+	    padding: 30px;
+	    border: 1px solid #333;
+	    border-radius: 50%;
+	    display: inline-block;
+	    margin-bottom: 25px;
+	}
+	.secondRowCont{
+		margin-top: 50px;
+	}
+	.imgDiv{
+		position: relative;
+		overflow: hidden;
+		width: 21%;
+		/*border: 3px solid black;*/
+		padding: 0px;
+		margin: 0px 2%;
+		transition: all 0.3s;
+	}
+	.imgDiv img{
+		  max-width: 100%;
+		  -moz-transition: all 0.3s;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+	}
+	.imgDiv:hover img{
+		  -moz-transform: scale(1.1);
+		  -webkit-transform: scale(1.1);
+		  transform: scale(1.1);
+		  opacity: 0.8;
+	}
+	.imgRow{
+		text-align: center;
+		margin-top: 50px;
+	}
+	.thirdRow{
+		margin-bottom: 50px;
+	}
+	.breakRow{
+		background: -webkit-linear-gradient(left, #132e43, #1bb1d1);
+		color: white;
+	}
+	.breakRow h1{
+		margin-bottom: 20px;
+		text-align: center;
+	}
+</style>
+<div class="row landingRow">
+	<div class="container">
+		<div class="col-sm-6 landingDiv">
+			<p>From a small idea in a Greyhound bus station to innovative pioneer in the travel industry, Archer Travel, like the best of success stories, started with a simple dream and idea. Archer Travel was established in 1952 inside the lobby of the Glendale, CA Greyhound bus terminal by Cliff and Lola Archer. The Archers wanted to provide quality information and affordable travel arrangements for local residents and friends who wanted to see the world. They wanted to build a business that provided the highest levels of customer service and true value. Today, that commitment to quality and affordability is carried on by the Archer Family. Ron Archer is the son of the founders, and together with his wife Jill, they own and operate the company and carry on the tradition. Archer Travel Service, Inc. is made up of several divisions dedicated to providing value and dependability to tens of thousands of travelers each year. Archer Leisure Travel specializes in Hawaii, Mexico, Canada, Europe and the Caribbean. Archer Travel will provide a package just right for you and your budget.</p>
+		</div>
+		<div class="col-sm-6 landingDiv right">
+			<h1>Booking Form</h1>
+		</div>
+	</div>
+</div>
+</div>
+<div class="row secondRow">
+	<div class="container secondRowCont">
+		<div class="col-sm-4 secondDiv">
+			<span class="border"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span></span>
+			<p>Integer quis urna id nulla aliquam bibendum. Etiam sit amet rhoncus mauris. Nunc euismod vel dui non sollicitudin. Maecenas in accumsan urna. Suspendisse potenti. Suspendisse laoreet ultricies tellus non condimentum. Donec pretium scelerisque euismod. Donec vel vestibulum velit. Sed elementum ac turpis et condimentum.</p>
+		</div>
+		<div class="col-sm-4 secondDiv">
+			<span class="border"><span class="glyphicon glyphicon-road" aria-hidden="true"></span></span>
+			<p>Curabitur augue erat, porttitor vitae viverra non, vehicula ut ligula. Vivamus efficitur ante ante. Mauris lectus tellus, commodo vel neque vitae, luctus pretium sem. Duis tempor blandit elementum. Vivamus auctor consequat urna, vel egestas sem ornare sed. Integer sed dui urna. Mauris ultricies magna sodales nulla consectetur molestie.</p>
+		</div>
+		<div class="col-sm-4 secondDiv">
+			<span class="border"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></span>
+			<p>Aenean ac mauris leo. Quisque urna eros, condimentum sit amet tempor ac, vulputate ac ligula. Vivamus placerat vestibulum vestibulum. Integer volutpat neque justo, sed suscipit tellus rutrum quis. Integer vel nisl quam. Nunc ultricies nisi a sodales ullamcorper. Quisque mollis consequat dui, sed tincidunt enim accumsan non.</p>
+		</div>
+	</div>
+</div>
+<div class="row thirdRow">
+	<div class="row breakRow">
+		<div class="container">
+			<h1>Discover Your Next Vacation!</h1>
+		</div>
+	</div>
+	<div class="container thirdCont">
+		<div class="row imgRow">
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('beach.jpg') %></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('lake.jpg') %></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sydney.jpg') %></div></a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sf.jpg') %></div></a>
+		</div>
+		<div class="row imgRow">
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg') %></div>
+			</a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg') %></div>
+			</a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg') %></div>
+			</a>
+			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg') %></div>
+			</a>
+		</div>
+	</div>
+</div>

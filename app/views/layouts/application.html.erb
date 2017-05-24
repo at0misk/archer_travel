@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ArcherTravel</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style type="text/css">
+  	.navbar{
+  		transition: all 0.3s;
+  	}
+  	.yieldContainer{
+  		/*margin-top: 50px;*/
+  	}
+  	.navbar-default{
+  		background: transparent;
+  		border: none;
+  		box-shadow: none;
+  		-webkit-box-shadow: none;
+  	}
+  	.down{
+  		opacity: 0;
+  	}
+  	#navbar a{
+  		color: white;
+  	}
+    .navbar-brand{
+  		color: white !important;
+  	}
+  	nav a:hover{
+  		opacity: 0.8;
+  	}
+  	.up{
+  		background: white;
+  	}
+  	.upColor{
+  		color: #777 !important;
+  	}
+    html {
+      position: relative;
+    min-height: 100%;
+  }
+  body{
+    height: 100%;
+    padding-bottom: 100px;
+  }
+    footer{
+      /*background-color: #0275d8;*/
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 5%;
+      height: 100px;
+    }
+    .logo img{
+    	display: inline-block;
+    	width: 250px;
+    }
+    .fa{
+    	font-size: 22px;
+    	margin-left: 11px;
+    }
+    .rightFooter{
+    	float: right;
+    	text-align: right;
+    }
+    .copy p{
+    	margin: 0px;
+    }
+    .copy{
+    	margin-top: 5px;
+    	font-size: 11px;
+    }
+    .footerCont a{
+    	transition: all 0.3s;
+    	color: #333;
+    }
+    .footerCont a:hover{
+    	opacity: 0.8;
+    }
+    .footerLinks a:hover{
+    	text-decoration: none;
+    }
+  </style>
+  </head>
+
+  <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Archer Travel</a>
+        </div>
+        <%# if session[:user_id] %>
+        <div id="navbar" class="navbar-collapse collapse">
+          	<%# @checkUser = User.find(session[:user_id]) %>
+	          <ul class="nav navbar-nav navbar-right">
+            	<li><a href="/chatroom_admin">Home</a>
+	            <li><a href="/chatroom">Destinations</a></li>
+			    <li><a href="/users/edit">Vacaations</a></li>
+	            <li><a href="/logout">Cruises</a></li>
+	            <li><a href="/logout">About</a></li>
+	            <li><a href="/logout">Contact</a></li>
+	            <li><a href="/logout">Corporate</a></li>
+	          </ul>
+          <%# end %>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+  	<div class="container-fluid yieldContainer">
+    	<%= yield %>
+    </div>
+    <footer class="footer">
+    	<div class="container footerCont">
+    		<span class="logo"><%= image_tag('logo.png') %></span>
+    		<a href="#"><i class="fa fa-facebook"></i></a>
+    		<a href="#"><i class="fa fa-twitter"></i></a>
+    		<a href="#"><i class="fa fa-linkedin"></i></a>
+    		<div class="rightFooter">
+	    		<span class="footerLinks">
+	    			<a href="#">Terms</a> | 
+	    			<a href="#">Privacy</a> | 
+	    			<a href="#">Contact</a>
+	    		</span>
+	    		<div class="copy">
+	    			<p>Copyright 2017. All Rights Reserved. Archer Travel Service, Inc.</p>
+	    			<p>Seller of Travel: CA 2001330-10, FL 35395</p>
+	    		</div>
+    		</div>
+    	</div>
+    </footer>
+  </body>
+<script type="text/javascript">
+$( document ).on('turbolinks:load', function() {
+	var lastScrollTop = 0;
+	// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+	window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+	   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+	   if (st > lastScrollTop){
+	       // downscroll code
+	       console.log('down')
+	       $('.navbar').addClass('down')
+	   } else {
+	      // upscroll code
+	      console.log('up')
+	      var vscroll = document.body.scrollTop;
+	      if(vscroll == 0){
+	      	$('.navbar').removeClass('down')
+	      	$('.navbar').removeClass('up')
+	      	$('.navbar-nav>li>a').removeClass('upColor')
+	      	$('.navbar-brand').removeClass('upColor')
+	      }
+	      else{
+	      	$('.navbar').removeClass('down')
+	      	$('.navbar').addClass('up')
+	      	$('.navbar-nav>li>a').addClass('upColor')
+	      	$('.navbar-brand').addClass('upColor')
+	      }
+	   }
+	   lastScrollTop = st;
+	}, false);
+});
+</script>
+</html>
