@@ -22,57 +22,54 @@
 	.modalButtons{
 		text-align: center;
 	}
+	.specialHeader{
+		margin-top: 0;
+	}
 	.btn-danger{
 		float: right;
 	}
 </style>
 
 <div class="row landingRow">
-<div class="container">
-<% if @special %>
-	<div class="col-sm-6 landingDiv">
+		<div class="col-sm-6 landingDiv left">
 	<form class="form-horizontal" method="post" action="/specials/destroy/<%= @special.id %>">
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 		<button class="btn btn-danger btn-sm" data-confirm="Destroy Special?">X</button>
 	</form>
-	<h3><%= @special.title %></h3>
+	<h3 class="specialHeader"><%= @special.title %></h3>
 	<p><%= @special.description %></p>
 	<%= image_tag @special.image.url %>
-</div>
-<% else %>
-<div class="col-sm-6">
-</div>
-<% end %>
+		</div>
 		<div class="col-sm-6 landingDiv right">
-			<form class="form-horizontal" method="post" action="/specials" id="editForm" enctype="multipart/form-data">
+			<form class="form-horizontal" method="post" action="/specials/<%= @special.id %>" id="editForm" enctype="multipart/form-data">
 				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				<input name="_method" value="patch" type="hidden">
 				<div class="form-group">
 				    <label for="special[title]" class="col-sm-3 control-label">
 				        Title:</label>
 				    <div class="col-sm-6">
-				        <input name="special[title]" type="text" class="form-control" id="name" />
+				        <input name="special[title]" type="text" class="form-control" id="name" value="<%= @special.title %>"/>
 				    </div>
 				</div>
 				<div class="form-group">
 				    <label for="special[description]" class="col-sm-3 control-label">
 				        Description</label>
 				    <div class="col-sm-6">
-				    	<textarea name="special[description]" class="form-control" id="description"></textarea>
+				    	<textarea rows="10" name="special[description]" class="form-control" id="description"><%= @special.description %></textarea>
 				    </div>
 				</div>
 				<div class="form-group">
 				    <label for="special[image]" class="col-sm-3 control-label">File</label>
 				    <div class="col-sm-6">
-				    	<input name="special[image]" type="file" class="form-control-file" id="inputFile" aria-describedby="fileHelp">
+				    	<input name="special[image]" type="file" class="form-control-file" id="inputFile" aria-describedby="fileHelp" value="special.image">
 				    </div>
 			  	</div>
 				<div class="row">
 				    <div class="col-sm-12 modalButtons header">
 				        <button type="submit" class="btn btn-primary btn-sm">
-				            Upload</button>
+				            Update</button>
 				    </div>
 				</div>
 			</form>
 		</div>
-	</div>
 </div>

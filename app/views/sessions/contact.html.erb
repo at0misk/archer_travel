@@ -1,0 +1,118 @@
+<style type="text/css">
+	.landingRow{
+		/*background: blue;*/
+		background-image: url('/assets/background.png');
+		height: 50px;
+	}
+	.topRow{
+		/*margin-top: 20px;*/
+		/*height: 5000px;*/
+	}
+	.imgDiv img{
+		width: 70%;
+		/*display: inline;*/
+		vertical-align: top;
+		margin: 3%;
+	}
+	.leftImgDiv{
+		text-align: center;
+		/*border: 1px solid black;*/
+	}
+	.rightImgDiv{
+		text-align: center;
+	}
+	.rightTextDiv{
+		margin-top: 4%;
+	}
+	.leftTextDiv .block{
+		font-size: 0.9em;
+	}
+	.aboutHeader{
+		/*margin-top: 20%;*/
+		text-align: center;
+	}
+	.awardsHeader{
+		margin-top: 18%;
+		margin-bottom: 5%;
+		text-align: center;
+	}
+	.blue{
+		color: #188eab;
+		text-align: right;
+	}
+	.block{
+		display: block;
+	}
+	.phoneRow{
+		font-size: 1.2em;
+	}
+	.phoneRowTop{
+		margin-top: 8%;
+	}
+	.phoneRow div p{
+		margin-bottom: 2%;
+	}
+	.modalButtons{
+		text-align: center;
+	}
+	.phoneRowBottom{
+		margin-top: 10%;
+	}
+</style>
+<div class="row landingRow">
+</div>
+<div class="container">
+<div class="row">
+	<h3 class="aboutHeader">Contact Us</h3>
+</div>
+	<div class="row topRow">
+		<div class="col-sm-6 leftImgDiv imgDiv">
+			<div class="row phoneRow phoneRowTop">
+				<div class="col-sm-12">
+					<p>Local: (818) 248-1511</p>
+					<p>Toll Free: 800-272-4377</p>
+					<p>Fax: (818) 248-1643</p>
+				</div>
+			</div>
+			<div class="row phoneRow phoneRowBottom">
+				<div class="col-sm-12">
+					<p>Our office:</p>
+					<p>4148 Ocean View Blvd</p>
+					<p>Montrose, CA 91020</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6 rightTextDiv">
+				<form class="form-horizontal" method="post" action="/contact" id="editForm" enctype="multipart/form-data">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				<div class="form-group">
+				    <label for="name" class="col-sm-3 control-label">
+				        Name</label>
+				    <div class="col-sm-6">
+				        <input name="name" type="text" class="form-control" id="name" />
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="email" class="col-sm-3 control-label">
+				        Email</label>
+				    <div class="col-sm-6">
+				        <input name="email" type="text" class="form-control" id="name" />
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="inquiry" class="col-sm-3 control-label">
+				        Inquiry</label>
+				    <div class="col-sm-6">
+				    	<textarea rows="8" name="inquiry" class="form-control" id="description"></textarea>
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-sm-12 modalButtons header">
+				        <button type="submit" class="btn btn-primary btn-sm">
+				            Send</button>
+				    </div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

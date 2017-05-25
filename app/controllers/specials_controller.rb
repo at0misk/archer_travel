@@ -17,6 +17,25 @@ class SpecialsController < ApplicationController
 		end
 			redirect_to :back
 	end
+	def admin
+		@specials = Special.all
+	end
+	def edit
+		@special = Special.find(params['id'])
+	end
+	def update
+		@special = Special.find(params['id'])
+	    if @special.update(special_params)
+	    	flash[:errors] = nil
+	    else
+	    	flash[:errors] = @special.errors.full_messages
+	    end
+	    redirect_to :back
+	end
+	def destroy
+		Special.find(params['id']).destroy
+		redirect_to '/specials/admin'
+	end
 	def special_params
 		params.require(:special).permit(:title, :description, :image)
 	end

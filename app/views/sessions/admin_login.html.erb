@@ -1,0 +1,66 @@
+<style type="text/css">
+	.landingRow{
+		/*background: blue;*/
+		background-image: url('/assets/background.png');
+		height: 50px;
+	}
+	.landingDiv{
+		/*color: white;*/
+		margin-top: 80px;
+		text-align: justify;
+	}
+	.left{
+		text-align: center;
+	}
+	.secondRow{
+		/*height: 5000px;*/
+		text-align: center;
+	}
+	.headerTop{
+		margin-top: 0px;
+	}
+	.modalButtons{
+		text-align: center;
+	}
+	.btn-danger{
+		float: right;
+	}
+	.adminHeader{
+		text-align: center;
+	}
+</style>
+
+<div class="row landingRow">
+<div class="container">
+	<div class="col-sm-3">
+	</div>
+		<div class="col-sm-6 landingDiv right">
+		<h3 class="adminHeader">Admin Login</h3>
+			<form class="form-horizontal" method="post" action="/admin" id="editForm" enctype="multipart/form-data">
+				<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+				<div class="form-group">
+				    <label for="username" class="col-sm-3 control-label">
+				        Username:</label>
+				    <div class="col-sm-6">
+				        <input name="username" type="text" class="form-control" id="name" />
+				    </div>
+				</div>
+				<div class="form-group">
+				    <label for="password" class="col-sm-3 control-label">
+				        Password:</label>
+				    <div class="col-sm-6">
+				    	<input name="password" type="password" class="form-control" id="pw" />
+				    </div>
+				</div>
+				<div class="row">
+				    <div class="col-sm-12 modalButtons header">
+				        <button type="submit" class="btn btn-primary btn-sm">
+				            Upload</button>
+				    </div>
+				</div>
+			</form>
+		</div>
+	<div class="col-sm-3">
+	</div>
+	</div>
+</div>
