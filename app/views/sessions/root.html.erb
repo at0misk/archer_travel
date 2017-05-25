@@ -1,12 +1,19 @@
 <style type="text/css">
+/** {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
 	.landingRow{
 		/*background: blue;*/
 		background-image: url('/assets/background.png');
-		height: 400px;
+	    height: 500px;
+	    background-repeat: no-repeat;
+	    background-size: cover;
 	}
 	.landingDiv{
 		color: white;
-		margin-top: 100px;
+		margin-top: 80px;
 		text-align: justify;
 	}
 	.secondRow{
@@ -19,7 +26,7 @@
 		text-align: justify;
 	}
 	.right{
-		text-align: center;
+		/*text-align: center;*/
 	}
 	.border{
 	    width: 125px;
@@ -86,14 +93,160 @@
 		background: #f3f3f3;
     	padding: 2%;
 	}
+	.or{
+		text-align: center;
+    	display: block;
+	}
+	.btnDiv{
+		margin-top: 2%;
+		text-align: right;
+	}
+	.formDiv div{
+		margin-bottom: 2%;
+	}
+	.formHeader{
+		margin-top: 0px;
+		text-align: center;
+		margin-bottom: 40px;
+	}
+	.formDiv{
+		margin-top: 111px;
+	}
+	.landingDiv img{
+		width: 50%;
+	}
+	.logoSpan{
+		text-align: center;
+		display: block;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
 		<div class="col-sm-6 landingDiv">
+			<span class="logoSpan"><%= image_tag('header_logo') %></span>
 			<p>From a small idea in a Greyhound bus station to innovative pioneer in the travel industry, Archer Travel, like the best of success stories, started with a simple dream and idea. Archer Travel was established in 1952 inside the lobby of the Glendale, CA Greyhound bus terminal by Cliff and Lola Archer. The Archers wanted to provide quality information and affordable travel arrangements for local residents and friends who wanted to see the world. They wanted to build a business that provided the highest levels of customer service and true value. Today, that commitment to quality and affordability is carried on by the Archer Family. Ron Archer is the son of the founders, and together with his wife Jill, they own and operate the company and carry on the tradition. Archer Travel Service, Inc. is made up of several divisions dedicated to providing value and dependability to tens of thousands of travelers each year. Archer Leisure Travel specializes in Hawaii, Mexico, Canada, Europe and the Caribbean. Archer Travel will provide a package just right for you and your budget.</p>
 		</div>
-		<div class="col-sm-6 landingDiv right">
-			<h1>Booking Form</h1>
+<div class="col-sm-6 landingDiv right formDiv">
+<h2 class="formHeader">Book Your Next Vacation!</h2>
+<form name="VPSearchForm"  method="post" action="http://www.latesttraveloffers.com/ci/enter.asp?site=VTHARC&amp;account=&amp;UseSearchApi=true">
+<input type="hidden" name="srchDestText">
+<div class="form-group">
+    <label for="special[title]" class="col-sm-4 control-label">Travel Type</label>
+    <div class="col-sm-8">
+		<select name="srchTravType" class="VP-SearchInput form-control">
+			<option value="CRVA">Cruises/Vacation Pkgs</option>
+			<option value="CRUZ">Cruises Only</option>
+			<option value="PKG">Vacation Pkgs Only</option>
+			<option value="TOUR">Tours Only</option>
+			<option value="AUTO">International Auto</option>
+			<option value="LODG">Lodging</option>
+			<option value="AIR">Air Only</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+    <label for="special[title]" class="col-sm-4 control-label">Destination</label>
+    <div class="col-sm-8 dest">
+		<select name="srchDestText1" class="VP-SearchInput form-control" onchange="document.VPSearchForm.srchDestText2.value='';">
+			<option value="">Any Destination</option>
+			<option value="Africa">Africa</option>
+			<option value="Alaska">Alaska</option>
+			<option value="Antarctica">Antarctica</option>
+			<option value="Aruba">Aruba</option>
+			<option value="Asia">Asia</option>
+			<option value="Australia">Australia</option>
+			<option value="Bahamas">Bahamas</option>
+			<option value="Baltic">Baltic</option>
+			<option value="Bermuda">Bermuda</option>
+			<option value="Britain and Ireland">Britain and Ireland</option>
+			<option value="California">California</option>
+			<option value="Canada and New England">Canada and New England</option>
+			<option value="Western Canada">Canada (Western)</option>
+			<option value="Cancun">Cancun</option>
+			<option value="Caribbean">Caribbean</option>
+			<option value="Western Caribbean">Caribbean (Western)</option>
+			<option value="Eastern Caribbean">Caribbean (Eastern)</option>
+			<option value="Southern Caribbean">Caribbean (Southern)</option>
+			<option value="Central America">Central America</option>
+			<option value="Europe">Europe</option>
+			<option value="Florida">Florida</option>
+			<option value="Hawaii">Hawaii</option>
+			<option value="Jamaica">Jamaica</option>
+			<option value="Las Vegas">Las Vegas</option>
+			<option value="Mediterranean">Mediterranean</option>
+			<option value="Mexican Riviera">Mexican Riviera</option>
+			<option value="Mexico">Mexico</option>
+			<option value="Middle East">Middle East</option>
+			<option value="New Zealand">New Zealand</option>
+			<option value="Northern Europe">Northern Europe</option>
+			<option value="Panama Canal">Panama Canal</option>
+			<option value="South America">South America</option>
+			<option value="South Pacific">South Pacific</option>
+			<option value="Transatlantic">Transatlantic</option>
+			<option value="USA">USA</option>
+			<option value="Eastern US">USA (Eastern)</option>
+			<option value="Western US">USA (Western)</option>
+		</select>
+	</div>
+</div>
+<div class="or">or</div>
+<div class="form-group">
+    <label for="special[title]" class="col-sm-4 control-label">Type in Destination</label>
+    <div class="col-sm-8">
+		<input type="text" class="VP-SearchInput form-control" name="srchDestText2" width="30">
+	</div>
+</div>
+<div class="form-group">
+    <label for="special[title]" class="col-sm-4 control-label">Departure Date</label>
+    <div class="col-sm-8">
+		<select name="srchStartTravDate" class="VP-SearchInput form-control">
+			<option value="">Any Date</option>
+			<option value="04*2016*">April 2016</option>
+			<option value="05*2016*">May 2016</option>
+			<option value="06*2016*">June 2016</option>
+			<option value="07*2016*">July 2016</option>
+			<option value="08*2016*">August 2016</option>
+			<option value="09*2016*">September 2016</option>
+			<option value="10*2016*">October 2016</option>
+			<option value="11*2016*">November 2016</option>
+			<option value="12*2016*">December 2016</option>
+			<option value="01*2017*">January 2017</option>
+			<option value="02*2017*">February 2017</option>
+			<option value="03*2017*">March 2017</option>
+			<option value="04*2017*">April 2017</option>
+			<option value="05*2017*">May 2017</option>
+			<option value="06*2017*">June 2017</option>
+			<option value="07*2017*">July 2017</option>
+			<option value="08*2017*">August 2017</option>
+			<option value="09*2017*">September 2017</option>
+			<option value="10*2017*">October 2017</option>
+			<option value="11*2017*">November 2017</option>
+			<option value="12*2017*">December 2017</option>
+			<option value="01*2018*">January 2018</option>
+			<option value="02*2018*">February 2018</option>
+			<option value="03*2018*">March 2018</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+    <label for="special[title]" class="col-sm-4 control-label">Travel Length</label>
+    <div class="col-sm-8">
+		<select name="srchTravLength" class="VP-SearchInput form-control">
+			<option value="">Any Length</option>
+			<option value="0*2*">0-2 nights</option>
+			<option value="3*6*">3-6 nights</option>
+			<option value="7*9*">7-9 nights</option>
+			<option value="10*14*">10-14 nights</option>
+			<option value="14**">over 14 nights</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+    <div class="col-sm-12 btnDiv">
+		<button class="btn btn-primary btn-sm">Search</button>
+	</div>
+</div>
+</form> 
 		</div>
 	</div>
 </div>
