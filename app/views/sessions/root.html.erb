@@ -7,7 +7,7 @@
 	.landingRow{
 		/*background: blue;*/
 		background-image: url('/assets/background.png');
-	    height: 500px;
+	    height: 520px;
 	    background-repeat: no-repeat;
 	    background-size: cover;
 	}
@@ -94,7 +94,8 @@
     	padding: 2%;
 	}
 	.or{
-		text-align: center;
+		/*text-align: center;*/
+		margin-left: 40px;
     	display: block;
 	}
 	.btnDiv{
@@ -119,6 +120,28 @@
 		text-align: center;
 		display: block;
 	}
+	#resultFrame{
+		border-width: 0px;
+		padding-left: 25%;
+		margin-top: 20px;
+		height: 2200px;
+		width: 100%;
+		  -moz-transition: all 0.3s;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+	}
+	.block{
+		display: block;
+	}
+	.hide{
+		display: none;
+	}
+	.center{
+		margin: 0 auto;
+	}
+	.dest{
+		margin-bottom: 0px !important;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -128,7 +151,7 @@
 		</div>
 <div class="col-sm-6 landingDiv right formDiv">
 <h2 class="formHeader">Book Your Next Vacation!</h2>
-<form name="VPSearchForm"  method="post" action="http://www.latesttraveloffers.com/ci/enter.asp?site=VTHARC&amp;account=&amp;UseSearchApi=true">
+<form name="VPSearchForm"  method="post" action="http://www.latesttraveloffers.com/ci/enter.asp?site=VTHARC&amp;account=&amp;UseSearchApi=true" id="vacationForm" target="resultFrame">
 <input type="hidden" name="srchDestText">
 <div class="form-group">
     <label for="special[title]" class="col-sm-4 control-label">Travel Type</label>
@@ -243,11 +266,17 @@
 </div>
 <div class="form-group">
     <div class="col-sm-12 btnDiv">
-		<button class="btn btn-primary btn-sm">Search</button>
+		<button class="btn btn-primary btn-sm" id="vacationButton">Search</button>
 	</div>
 </div>
 </form> 
 		</div>
+	</div>
+</div>
+<div class="row resultRow">
+	<div class="container resultCont">
+		<div class="col-sm-12">
+			<iframe src="" name="resultFrame" id="resultFrame" class="hide"></iframe>
 	</div>
 </div>
 <div class="row secondRow">
@@ -300,3 +329,45 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+$(document).on('turbolinks:load',function(){
+
+$("#vacationButton").click(function() {
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+    $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+    addCss();
+})
+
+function addCss(){
+	$('#mainContent').addClass('center');
+}
+// $("#vacationForm").submit(function(e)
+// {
+//     var postData = $(this).serialize();
+//     var formURL = $(this).attr("action");
+//     $.ajax(
+//     {
+//         url : formURL,
+//         headers: { 'Access-Control-Allow-Origin': '*' },
+//         type: "POST",
+//         crossDomain: true,
+//         // dataType: 'html',
+//         data : postData,
+//         success:function(data, textStatus, jqXHR) 
+//         {
+//             $('.yieldContainer').load(data.url);
+//             console.log(data.url)
+//         },
+//         error: function(jqXHR, textStatus, errorThrown) 
+//         {
+//             //if fails      
+//         }
+//     });
+//     e.preventDefault(); //STOP default action
+//     // e.unbind(); //unbind. to stop multiple form submit.
+// });
+
+});
+</script>
