@@ -72,7 +72,7 @@
 	<div class="row">
 	<% x = 0 %>
 	<% @specials.each do |val| %>
-		<a href="/specials/<%= val.id %>"><div class="col-sm-6 specialBox"><h2><%= val.title %></h2><p><%= val.description %></p><%= image_tag( val.image.url ) %></div></a>
+		<a href="/specials/<%= val.id %>"><div class="col-sm-6 specialBox"><h2><%= val.title %></h2><p><%= val.description %></p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
 		<% x += 1 %>
 		<% if x == 2 %>
 		</div>

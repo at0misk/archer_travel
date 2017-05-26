@@ -54,7 +54,7 @@
 	<div class="row topRow">
 		<div class="col-sm-6 leftImgDiv imgDiv">
 		<h2><%= @special.title %></h2>
-		<%= image_tag( @special.image.url ) %>
+		<%= image_tag( @special.image.url, :class => "img-responsive" ) %>
 		</div>
 		<div class="col-sm-6 rightTextDiv">
 		<p><%= @special.description %></p>
