@@ -124,7 +124,7 @@
 		border-width: 0px;
 		padding-left: 25%;
 		margin-top: 20px;
-		height: 2200px;
+		height: 2300px;
 		width: 100%;
 		  -moz-transition: all 0.3s;
 		  -webkit-transition: all 0.3s;
@@ -141,6 +141,9 @@
 	}
 	.dest{
 		margin-bottom: 0px !important;
+	}
+	.lux{
+		height: 680px;
 	}
 </style>
 <div class="row landingRow">
@@ -216,7 +219,7 @@
 <div class="form-group">
     <label for="special[title]" class="col-sm-4 control-label">Type in Destination</label>
     <div class="col-sm-8">
-		<input type="text" class="VP-SearchInput form-control" name="srchDestText2" width="30">
+		<input id="destinationSearch" type="text" class="VP-SearchInput form-control" name="srchDestText2" width="30">
 	</div>
 </div>
 <div class="form-group">
@@ -299,7 +302,7 @@
 <div class="row specialRow">
 	<div class="container">
 		<div class="col-sm-6 specialImageDiv">
-			<a href="#"><%= image_tag(@special.image.url) %></a>
+			<a href="/specials/<%= @special.id %>"><%= image_tag(@special.image.url) %></a>
 		</div>
 		<div class="col-sm-6">
 			<h3 class="specialHeader"><%= @special.title %></h3>
@@ -316,16 +319,16 @@
 	</div>
 	<div class="container thirdCont">
 		<div class="row imgRow">
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('beach.jpg') %><div class="description">Beach</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('lake.jpg') %><div class="description">Lake</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sydney.jpg') %><div class="description">Sydney</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('sf.jpg') %><div class="description">San Fransisco</div></div></a>
+			<a role="button" tabindex="0" class="hawaii"><div class="imgDiv col-sm-3"><%= image_tag('beach.jpg') %><div class="description">Hawaii</div></div></a>
+			<a role="button" tabindex="0" class="europe"><div class="imgDiv col-sm-3"><%= image_tag('lake.jpg') %><div class="description">Europe</div></div></a>
+			<a role="button" tabindex="0" id="sydney"><div class="imgDiv col-sm-3"><%= image_tag('sydney.jpg') %><div class="description">Sydney</div></div></a>
+			<a role="button" tabindex="0" class="luxury"><div class="imgDiv col-sm-3"><%= image_tag('sf.jpg') %><div class="description">Luxurious Escapes</div></div></a>
 		</div>
 		<div class="row imgRow">
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg') %><div class="description">China</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg') %><div class="description">New York City</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg') %><div class="description">Las Vegas</div></div></a>
-			<a href="#"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg') %><div class="description">City</div></div></a>
+			<a role="button" tabindex="0" class="short"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg') %><div class="description">Short Getaways</div></div></a>
+			<a role="button" tabindex="0" class="active"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg') %><div class="description">Active Vacations</div></div></a>
+			<a role="button" tabindex="0" class="vegas"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg') %><div class="description">Las Vegas</div></div></a>
+			<a role="button" tabindex="0" class="alaska"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg') %><div class="description">Alaska</div></div></a>
 		</div>
 	</div>
 </div>
@@ -333,12 +336,138 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
+// $('#sydney').click(function(){
+// 	$('#destinationSearch').val("Sydney");
+// 	$('#vacationButton').click();
+// })
+
+// $('#china').click(function(){
+// 	$('#destinationSearch').val("China");
+// 	$('#vacationButton').click();
+// })
+
+$('.vegas').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=4111&TargetType=Hot+Destinations");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.hawaii').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1702&TargetType=Hot+Destinations");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.europe').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1703&TargetType=Hot+Destinations");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.alaska').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1705&TargetType=Hot+Destinations");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.luxury').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=7");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.short').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=10");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+$('.active').click(function(){
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+})
+
+// $('.carribean').click(function(){
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1701&TargetType=Hot+Destinations")
+// 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+// })
+
 $("#vacationButton").click(function() {
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
     addCss();
 })
+
+
+<% if session[:hawaii] %>
+	$('.hawaii').click();
+	<% session[:hawaii] = nil %>
+<% end %>
+
+<% if session[:vegas] %>
+	$('.vegas').click();
+	<% session[:vegas] = nil %>
+<% end %>
+
+<% if session[:alaska] %>
+	$('.alaska').click();
+	<% session[:alaska] = nil %>
+<% end %>
+
+<% if session[:europe] %>
+	$('.europe').click();
+	<% session[:europe] = nil %>
+<% end %>
+
+<% if session[:luxury] %>
+	$('.luxury').click();
+	<% session[:luxury] = nil %>
+<% end %>
+
+<% if session[:short] %>
+	$('.short').click();
+	<% session[:short] = nil %>
+<% end %>
+
+<% if session[:active] %>
+	$('.active').click();
+	<% session[:active] = nil %>
+<% end %>
+
+<% if session[:carribean] %>
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1701&TargetType=Hot+Destinations");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+	<% session[:carribean] = false %>
+<% end %>
+
+<% if session[:river] %>
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=1056");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+	<% session[:river] = false %>
+<% end %>
+
+<% if session[:distinct] %>
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=4880");
+	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+	<% session[:distinct] = false %>
+<% end %>
 
 function addCss(){
 	$('#mainContent').addClass('center');

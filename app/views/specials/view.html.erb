@@ -1,0 +1,100 @@
+<style type="text/css">
+	.landingRow{
+		/*background: blue;*/
+		background-image: url('/assets/background.png');
+		height: 50px;
+	}
+	.topRow{
+		margin-top: 20px;
+		/*height: 5000px;*/
+	}
+	.imgDiv img{
+		/*width: 70%;*/
+		/*display: inline;*/
+		vertical-align: top;
+		margin: 3%;
+	}
+	.leftImgDiv{
+		text-align: center;
+		/*border: 1px solid black;*/
+	}
+	.rightImgDiv{
+		text-align: center;
+	}
+	.rightTextDiv{
+		margin-top: 7%;
+		text-align: justify;
+	}
+	.leftTextDiv .block{
+		font-size: 0.9em;
+	}
+	.aboutHeader{
+		margin-top: 20%;
+		text-align: center;
+	}
+	.awardsHeader{
+		margin-top: 18%;
+		margin-bottom: 5%;
+		text-align: center;
+	}
+	.blue{
+		color: #188eab;
+		text-align: right;
+	}
+	.block{
+		display: block;
+	}
+	.lastRow{
+		/*margin-bottom: 5%;*/
+	}
+</style>
+<div class="row landingRow">
+</div>
+<div class="container">
+	<div class="row topRow">
+		<div class="col-sm-6 leftImgDiv imgDiv">
+		<h2><%= @special.title %></h2>
+		<%= image_tag( @special.image.url ) %>
+		</div>
+		<div class="col-sm-6 rightTextDiv">
+		<p><%= @special.description %></p>
+		</div>
+	</div>
+<!-- 	<div class="row lastRow">
+		<div class="col-sm-6 leftTextDiv">
+		<h3 class="awardsHeader">Honors and Awards</h3>
+		<div class="row">
+			<div class="col-sm-6 blue">
+				<span class="block">AMERICAN AIRLINES</span>
+				<span class="block">CARNIVAL CRUISE LINES</span>
+				<span class="block">CONTINENTAL AIRLINES</span>
+				<span class="block">HERTZ</span>
+				<span class="block">LEISURE TRAVEL GROUP</span>
+				<span class="block">NORTHWEST AIRLINES</span>
+				<span class="block">NORWEGIAN CRUISE LINES</span>
+				<span class="block">PRINCESS CRUISE LINES</span>
+				<span class="block">ROYAL CARIBBEAN CRUISE LINES</span>
+				<span class="block">SCANDINAVIAN AIRLINES</span>
+				<span class="block">UNITED AIRLINES</span>
+				<span class="block">USAIRWAYS</span>
+			</div>
+			<div class="col-sm-6">
+				<span class="block">Performance Award, Sales Achievement</span>
+				<span class="block">Winners Circle</span>
+				<span class="block">Outstanding Achievements in Aviation</span>
+				<span class="block">Outstanding Performance</span>
+				<span class="block">Million Dollar Sales Club</span>
+				<span class="block">Bridging the Pacific</span>
+				<span class="block">Outstanding Performance</span>
+				<span class="block">Award for Outstanding Sales Performance</span>
+				<span class="block">Viking Crown Award</span>
+				<span class="block">Outstanding Cooperation and Support</span>
+				<span class="block">Gold Plate Agency X 5 years</span>
+				<span class="block">Top Producer Award</span>
+			</div>
+		</div>
+		</div>
+		<div class="col-sm-6 rightImgDiv imgDiv">
+		</div>
+	</div> -->
+</div>

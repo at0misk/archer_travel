@@ -24,4 +24,44 @@ class SessionsController < ApplicationController
 		# Placeholder - use mailer here
 		redirect_to '/contact'
 	end
+	def hawaii
+		session[:hawaii] = true
+		redirect_to '/'
+	end
+	def vegas
+		session[:vegas] = true
+		redirect_to '/'
+	end
+	def alaska
+		session[:alaska] = true
+		redirect_to '/'
+	end
+	def europe
+		session[:europe] = true
+		redirect_to '/'
+	end
+	def luxury
+		session[:luxury] = true
+		redirect_to '/'
+	end
+	def short
+		session[:short] = true
+		redirect_to '/'
+	end
+	def active
+		session[:active] = true
+		redirect_to '/'
+	end
+	def carribean
+		session[:carribean] = true
+		redirect_to '/'
+	end
+	def river
+		session[:river] = true
+		redirect_to '/'
+	end
+	def distinct
+		session[:distinct] = true
+		redirect_to '/'
+	end
 end

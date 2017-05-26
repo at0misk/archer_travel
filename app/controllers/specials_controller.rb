@@ -2,6 +2,9 @@ class SpecialsController < ApplicationController
 	def index
 		@specials = Special.all
 	end
+	def view
+		@special = Special.find(params['id'])
+	end
 	def new
 		if session[:uploaded_id]
 			@special = Special.find(session[:uploaded_id])
