@@ -23,5 +23,7 @@ Rails.application.routes.draw do
 	get 'carribean' => 'sessions#carribean'
 	get 'distinct' => 'sessions#distinct'
 	get 'river' => 'sessions#river'
+	get 'privacy' => 'sessions#privacy'
+	get 'terms' => 'sessions#terms'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

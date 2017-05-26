@@ -20,6 +20,10 @@ class SessionsController < ApplicationController
 	end
 	def contact
 	end
+	def privacy
+	end
+	def terms
+	end
 	def send_mail
 		# Placeholder - use mailer here
 		redirect_to '/contact'
