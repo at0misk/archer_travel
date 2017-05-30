@@ -149,6 +149,9 @@
 		display: inline-block;
 		float: right;
 	}
+	.specialImg:hover{
+		opacity: 0.8;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -306,7 +309,7 @@
 <div class="row specialRow">
 	<div class="container">
 		<div class="col-sm-6 specialImageDiv">
-			<a href="/specials/<%= @special.id %>"><%= image_tag(@special.image.url, :class => "img-responsive") %></a>
+			<a href="/specials/<%= @special.id %>"><%= image_tag(@special.image.url, :class => "img-responsive specialImg") %></a>
 		</div>
 		<div class="col-sm-6">
 			<h3 class="specialHeader"><%= @special.title %></h3>
