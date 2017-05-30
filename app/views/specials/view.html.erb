@@ -64,8 +64,8 @@
 	<div class="row topRow">
 		<div class="col-sm-6 leftImgDiv imgDiv">
 		<div class="row headerRow">
-			<h2 class="cardHeader"><%= @special.title %></h2>
-			<h2 class="priceHeader"><%= number_to_currency(@special.price) %></h2>
+			<h3 class="cardHeader"><%= @special.title %></h3>
+			<h3 class="priceHeader"><%= number_to_currency(@special.price) %></h3>
 		</div>
 		<%= image_tag( @special.image.url, :class => "img-responsive" ) %>
 		</div>
