@@ -23,6 +23,8 @@
 	}
 	.rightTextDiv{
 		margin-top: 7%;
+	}
+	.rightTextDiv p{
 		text-align: justify;
 	}
 	.leftTextDiv .block{
@@ -65,11 +67,11 @@
 		<div class="col-sm-6 leftImgDiv imgDiv">
 		<%= image_tag( @special.image.url, :class => "img-responsive" ) %>
 		</div>
+		<div class="col-sm-6 rightTextDiv">
 		<div class="row headerRow">
 			<h3 class="cardHeader"><%= @special.title %></h3>
 			<h3 class="priceHeader"><%= number_to_currency(@special.price) %></h3>
 		</div>
-		<div class="col-sm-6 rightTextDiv">
 		<p><%= @special.description %></p>
 		</div>
 	</div>
