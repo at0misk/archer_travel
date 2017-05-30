@@ -15,7 +15,7 @@
 		margin: 3%;
 	}
 	.leftImgDiv{
-		text-align: center;
+		/*text-align: center;*/
 		/*border: 1px solid black;*/
 	}
 	.rightImgDiv{
@@ -47,13 +47,21 @@
 	.lastRow{
 		/*margin-bottom: 5%;*/
 	}
+	.cardHeader{
+		display: inline-block;
+	}
+	.priceHeader{
+		display: inline-block;
+		text-align: right;
+	}
 </style>
 <div class="row landingRow">
 </div>
 <div class="container">
 	<div class="row topRow">
 		<div class="col-sm-6 leftImgDiv imgDiv">
-		<h2><%= @special.title %></h2>
+		<h2 class="cardHeader"><%= @special.title %></h2>
+		<h3 class="priceHeader"><%= number_to_currency(@special.price) %></h3>
 		<%= image_tag( @special.image.url, :class => "img-responsive" ) %>
 		</div>
 		<div class="col-sm-6 rightTextDiv">
