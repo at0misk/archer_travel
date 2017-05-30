@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 	require 'open-uri'
 	def root
+		reset_session
 		@specials = Special.all
 		if @specials.length > 0 
 			@rand = rand(0..@specials.length-1)
@@ -18,12 +19,16 @@ class SessionsController < ApplicationController
 		redirect_to '/'
 	end
 	def about
+		reset_session
 	end
 	def contact
+		reset_session
 	end
 	def privacy
+		reset_session
 	end
 	def terms
+		reset_session
 	end
 	def send_mail
 		# Placeholder - use mailer here

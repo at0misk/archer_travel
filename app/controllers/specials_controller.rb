@@ -1,8 +1,10 @@
 class SpecialsController < ApplicationController
 	def index
+		reset_session
 		@specials = Special.all
 	end
 	def view
+		reset_session
 		@special = Special.find(params['id'])
 	end
 	def new
