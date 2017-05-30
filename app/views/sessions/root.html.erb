@@ -367,7 +367,7 @@
 		</div>
 		<div class="row imgRow">
 			<a role="button" tabindex="0" class="short"><div class="imgDiv col-sm-3"><%= image_tag('china.jpg', :class => "img-responsive") %><div class="description">Short Getaways</div></div></a>
-			<a role="button" tabindex="0" class="active"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg', :class => "img-responsive") %><div class="description">Active Vacations</div></div></a>
+			<a role="button" tabindex="0" class="activeDiv"><div class="imgDiv col-sm-3"><%= image_tag('nyc.jpg', :class => "img-responsive") %><div class="description">Active Vacations</div></div></a>
 			<a role="button" tabindex="0" class="vegas"><div class="imgDiv col-sm-3"><%= image_tag('vegas.jpg', :class => "img-responsive") %><div class="description">Las Vegas</div></div></a>
 			<a role="button" tabindex="0" class="alaska"><div class="imgDiv col-sm-3"><%= image_tag('chicago.jpg', :class => "img-responsive") %><div class="description">Alaska</div></div></a>
 		</div>
@@ -376,10 +376,6 @@
 
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
-
-$('#srchTravLength').click(function (e){
-	e.preventDefault();
-})
 
 $('.myTabs a').click(function (e) {
   e.preventDefault()
@@ -438,7 +434,7 @@ $('.short').click(function(){
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
 
-$('.active').click(function(){
+$('.activeDiv').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063");
