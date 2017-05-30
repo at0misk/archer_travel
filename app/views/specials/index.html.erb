@@ -99,9 +99,11 @@
 	<% x = 0 %>
 	<% @specials.each do |val| %>
 		<a href="/specials/<%= val.id %>"><div class="col-sm-6 specialBox"><h2 class="cardHeader"><%= val.title %></h2><span class="price"><%= number_to_currency(val.price) %></span><p><%= val.description %></p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
-		<div class="descriptorHeader">
-			<h3 class=titleH><%= val.title %></h3>
-			<h3 class="priceH"><%= number_to_currency(val.price) %></h3>
+		<div class="row">
+			<div class="descriptorHeader">
+				<h3 class=titleH><%= val.title %></h3>
+				<h3 class="priceH"><%= number_to_currency(val.price) %></h3>
+			</div>
 		</div>
 		<% x += 1 %>
 		<% if x == 2 %>
