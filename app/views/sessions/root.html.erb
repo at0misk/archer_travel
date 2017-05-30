@@ -425,7 +425,7 @@ $("#vacationButton").click(function() {
 
 <% if session[:hawaii] %>
 	$('.hawaii').click();
-	<% session[:hawaii] = nil %>
+	<% session.delete(:hawaii) %>
 <% end %>
 
 <% if session[:vegas] %>
