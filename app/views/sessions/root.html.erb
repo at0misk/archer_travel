@@ -149,6 +149,9 @@
 		display: inline-block;
 		float: right;
 	}
+	iframe>html{
+		min-height: 100%;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -475,7 +478,7 @@ $("#vacationButton").click(function() {
 <% end %>
 
 $('iframe') .on('load', function(){
-	console.log($('html').css("height"));
+	console.log($('iframe>html').css("height"));
 })
 
 function addCss(){
