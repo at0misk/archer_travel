@@ -18,16 +18,12 @@ class SessionsController < ApplicationController
 		redirect_to '/'
 	end
 	def about
-		reset_session
 	end
 	def contact
-		reset_session
 	end
 	def privacy
-		reset_session
 	end
 	def terms
-		reset_session
 	end
 	def send_mail
 		# Placeholder - use mailer here
