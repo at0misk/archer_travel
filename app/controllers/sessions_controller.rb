@@ -70,8 +70,8 @@ class SessionsController < ApplicationController
 		redirect_to '/'
 	end
 	def flights
-		doc = Nokogiri::HTML(open("https://faregrabbr.com/#/flight"))
-		@form = doc.css('.search-form')
+		# doc = Nokogiri::HTML(open("https://faregrabbr.com/#/flight"))
+		# @form = doc.css('.search-form')
 		# @entriesArray = []
 		# entries.each do |val|
 		# 	title = val.css('p.title>a').text
