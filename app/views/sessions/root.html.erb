@@ -290,7 +290,7 @@
 	<div class="form-group">
 	    <label for="srchTravLength" class="col-lg-4 control-label col-md-6">Travel Length</label>
 	    <div class="col-lg-8 col-md-6">
-			<select name="srchTravLength" class="VP-SearchInput form-control">
+			<select name="srchTravLength" id="srchTravLength" class="VP-SearchInput form-control">
 				<option value="">Any Length</option>
 				<option value="0*2*">0-2 nights</option>
 				<option value="3*6*">3-6 nights</option>
@@ -376,6 +376,10 @@
 
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
+
+$('#srchTravLength').click(function (e){
+	e.preventDefault();
+})
 
 $('.myTabs a').click(function (e) {
   e.preventDefault()
