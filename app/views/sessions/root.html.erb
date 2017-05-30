@@ -173,11 +173,11 @@
 <div class="tabsDiv">
 
 		  <!-- Nav tabs -->
-		  <ul class="nav nav-tabs" role="tablist">
+		  <ul id="myTabs" class="nav nav-tabs" role="tablist">
 		    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Flights</a></li>
 		    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Hotels</a></li>
 		    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Cars</a></li>
-		    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab" type="button">Vacation</a></li>
+		    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Vacation</a></li>
 		  </ul>
 
 <!-- Tab panes -->
@@ -372,6 +372,11 @@
 
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
+
+$('#myTabs a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
 
 // $('#sydney').click(function(){
 // 	$('#destinationSearch').val("Sydney");
