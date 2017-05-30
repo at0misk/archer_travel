@@ -474,6 +474,10 @@ $("#vacationButton").click(function() {
 	<% session[:distinct] = false %>
 <% end %>
 
+$('iframe') .on('load', function(){
+	console.log("loaded");
+})
+
 function addCss(){
 	$('#mainContent').addClass('center');
 }
