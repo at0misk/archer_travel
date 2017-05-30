@@ -291,7 +291,7 @@
 <div class="row resultRow">
 	<div class="container resultCont">
 		<div class="col-sm-12">
-			<iframe src="" name="resultFrame" id="resultFrame" class="hide" onload="frameLoaded()"></iframe>
+			<iframe src="" name="resultFrame" id="resultFrame" class="hide"></iframe>
 	</div>
 </div>
 <div class="row secondRow">
@@ -483,11 +483,11 @@ $("#vacationButton").click(function() {
 	<% session[:distinct] = nil %>
 <% end %>
 
-frameLoaded = function(){
-	console.log("loaded");
-	var height = $("iframe").contents().find("mainBody").height();
-	console.log(height);
-}
+// frameLoaded = function(){
+// 	console.log("loaded");
+// 	var height = $("iframe").contents().find("mainBody").height();
+// 	console.log(height);
+// }
 
 function addCss(){
 	$('#mainContent').addClass('center');
