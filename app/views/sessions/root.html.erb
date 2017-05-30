@@ -485,6 +485,8 @@ $("#vacationButton").click(function() {
 
 frameLoaded = function(){
 	console.log("loaded");
+	var height = $("iframe").contents().find("body").height();
+	console.log(height);
 }
 
 function addCss(){
