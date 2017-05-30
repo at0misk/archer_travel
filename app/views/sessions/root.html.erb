@@ -425,11 +425,9 @@ $("#vacationButton").click(function() {
 
 <% if session[:hawaii] %>
 	$('.hawaii').click();
-	console.log(<%= session[:hawaii] %>);
+	<% session.delete(:hawaii) %>
+	<% session[:hawaii] = nil %>
 <% end %>
-
-<% session.delete(:hawaii) %>
-<% session[:hawaii] = nil %>
 
 <% if session[:vegas] %>
 	$('.vegas').click();
