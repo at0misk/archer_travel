@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+	require 'open-uri'
 	def root
 		@specials = Special.all
 		if @specials.length > 0 
@@ -67,5 +68,20 @@ class SessionsController < ApplicationController
 	def distinct
 		session[:distinct] = true
 		redirect_to '/'
+	end
+	def flights
+		doc = Nokogiri::HTML(open("https://faregrabbr.com/#/flight"))
+		@form = doc.css('.search-form')
+		# @entriesArray = []
+		# entries.each do |val|
+		# 	title = val.css('p.title>a').text
+		# 	link = val.css('p.title>a')[0]['href']
+		# 	if link.start_with?('http') or  ".com".in? link
+		# 		@entriesArray << Entry.new(title, link)
+		# 	else
+		# 		pref = "http://reddit.com" + link
+		# 		@entriesArray << Entry.new(title, pref)
+		# 	end
+		# end
 	end
 end
