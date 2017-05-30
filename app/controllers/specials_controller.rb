@@ -40,6 +40,6 @@ class SpecialsController < ApplicationController
 		redirect_to '/specials/admin'
 	end
 	def special_params
-		params.require(:special).permit(:title, :description, :image)
+		params.require(:special).permit(:title, :description, :image, :price)
 	end
 end
