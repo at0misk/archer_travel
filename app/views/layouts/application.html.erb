@@ -231,11 +231,11 @@ $( document ).on('turbolinks:load', function() {
 	   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
 	   if (st > lastScrollTop){
 	       // downscroll code
-	       console.log('down')
+	       // console.log('down')
 	       $('.navbar').addClass('down')
 	   } else {
 	      // upscroll code
-	      console.log('up')
+	      // console.log('up')
 	      var vscroll = document.body.scrollTop;
 	      if(vscroll == 0){
 	      	$('.navbar').removeClass('down')
