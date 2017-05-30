@@ -485,7 +485,7 @@ $("#vacationButton").click(function() {
 
 frameLoaded = function(){
 	console.log("loaded");
-	var height = $("#mainBody").height();
+	var height = $("html").contents().find("mainBody").height();
 	console.log(height);
 }
 
