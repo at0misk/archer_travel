@@ -36,7 +36,8 @@
 		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 		<button class="btn btn-danger btn-sm" data-confirm="Destroy Special?">X</button>
 	</form>
-	<h3 class="specialHeader"><%= @special.title %></h3>
+	<h2 class="specialHeader"><%= @special.title %></h2>
+	<h3 class="specialHeader"><%= number_to_currency(@special.price) %></h3>
 	<p><%= @special.description %></p>
 	<%= image_tag @special.image.url %>
 		</div>
