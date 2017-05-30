@@ -463,7 +463,7 @@ $("#vacationButton").click(function() {
 	$('#resultFrame').addClass('block');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1701&TargetType=Hot+Destinations");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-	<% session[:carribean] = false %>
+	<% session[:carribean] = nil %>
 <% end %>
 
 <% if session[:river] %>
@@ -471,7 +471,7 @@ $("#vacationButton").click(function() {
 	$('#resultFrame').addClass('block');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=1056");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-	<% session[:river] = false %>
+	<% session[:river] = nil %>
 <% end %>
 
 <% if session[:distinct] %>
@@ -479,7 +479,7 @@ $("#vacationButton").click(function() {
 	$('#resultFrame').addClass('block');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=4880");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-	<% session[:distinct] = false %>
+	<% session[:distinct] = nil %>
 <% end %>
 
 function addCss(){
