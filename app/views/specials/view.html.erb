@@ -60,8 +60,10 @@
 <div class="container">
 	<div class="row topRow">
 		<div class="col-sm-6 leftImgDiv imgDiv">
-		<h2 class="cardHeader"><%= @special.title %></h2>
-		<h3 class="priceHeader"><%= number_to_currency(@special.price) %></h3>
+		<div class="row headerRow">
+			<h2 class="cardHeader"><%= @special.title %></h2>
+			<h3 class="priceHeader"><%= number_to_currency(@special.price) %></h3>
+		</div>
 		<%= image_tag( @special.image.url, :class => "img-responsive" ) %>
 		</div>
 		<div class="col-sm-6 rightTextDiv">
