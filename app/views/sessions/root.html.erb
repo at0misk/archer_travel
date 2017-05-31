@@ -490,8 +490,8 @@
 
 $(document).on('turbolinks:load',function(){
 
-document.querySelector('input').addEventListener('input', function() {
-  console.log('clicked!');
+$('input').on('input change', function() {
+  alert('Changed!');
 });
 
 var x = 0;
