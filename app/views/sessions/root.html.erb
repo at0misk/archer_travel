@@ -652,6 +652,9 @@ $('#origin').keydown(function(e) {
 	}
 	else{
 		var text = $(this).val();
+		if(text.length == 3){
+			console.log("3");
+		}
 		// console.log("key");
 		appendDataOrigin(text);
 	}
