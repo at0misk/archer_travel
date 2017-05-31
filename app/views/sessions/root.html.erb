@@ -433,7 +433,9 @@ $('.myTabs a').click(function (e) {
 })
 
 
-dp = $('#depart').datepicker().data('datepicker');
+
+var $j = jQuery.noConflict();
+dp = $j('#depart').datepicker().data('datepicker');
 $('#depart').on('click', function(){
 	dp.show();
 	$('#depart').focus();
