@@ -339,10 +339,10 @@
 			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination">
 		</div>
 	</div>
-	<div class="input-group date">
+	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="text" name="citypairs[0][departdate]" class="form-control" id="depart">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
 		</div>
 	</div>
 	<div class="form-group">
@@ -433,11 +433,11 @@ $('.myTabs a').click(function (e) {
 })
 
 
-dp = $('#depart').datepicker().data('datepicker');
-$('#depart').on('click', function(){
-	dp.show();
-	$('#depart').focus();
-})
+$("#epart").datepicker({
+  onSelect: function() {
+    $(this).change();
+  }
+});
 
 // $('#sydney').click(function(){
 // 	$('#destinationSearch').val("Sydney");
