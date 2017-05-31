@@ -317,7 +317,7 @@
 	<input type="hidden" name="adults" value="1">
 	<input type="hidden" name="children" value="0">
 	<input type="hidden" name="isWidget" value="true">
-	<input type="submit" value="submit">
+	<input type="submit" value="submit" id="flightButton">
 </form>
 </div>
 <div role="tabpanel" class="tab-pane" id="hotels">...</div>
@@ -467,6 +467,12 @@ $("#vacationButton").click(function() {
     addCss();
 })
 
+$("#flightButton").click(function() {
+	$('#resultFrame').removeClass('hide');
+	$('#resultFrame').addClass('block');
+    $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+    addCss();
+})
 
 <% if session[:hawaii] %>
 	$('.hawaii').click();
