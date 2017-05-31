@@ -492,6 +492,7 @@ $(document).on('turbolinks:load',function(){
 var x = 0;
 
 $(".addOrigin").on('click', function(){
+	x++;
 	$('.append-div').removeClass('hide');
 	$('.append-div').addClass('block');
 	$('.addOrigin').addClass('margin-bottom-2');
@@ -541,39 +542,38 @@ $(".addOrigin").on('click', function(){
 					})
 		}
 	});
-	x++;
-	$('#destination').keydown(function(e) {
-		if(e.keyCode == 8){
-			if(!$(this).val() || $(this).val().length == 1){
-				$('#dest-list').empty();
-			}
-			else{
-				var text = $(this).val();
-				appendDataDest(text);
-			}
-			// console.log('back')
-		}
-		else{
-			var text = $(this).val();
-			// console.log("key");
-			appendDataDest(text);
-		}
-	});
+	// $('#destination').keydown(function(e) {
+	// 	if(e.keyCode == 8){
+	// 		if(!$(this).val() || $(this).val().length == 1){
+	// 			$('#dest-list').empty();
+	// 		}
+	// 		else{
+	// 			var text = $(this).val();
+	// 			appendDataDest(text);
+	// 		}
+	// 		// console.log('back')
+	// 	}
+	// 	else{
+	// 		var text = $(this).val();
+	// 		// console.log("key");
+	// 		appendDataDest(text);
+	// 	}
+	// });
 
-	var appendDataDest = function(input){
-		$.ajax({
-			type: "GET",
-			url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
-			success: function(data){
-				$('#dest-list').empty();
-				for(var x = 0; x < data.length; x++){
-					console.log(data[x]['description'])
-					var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-					$('#dest-list').append(newOption);
-				}
-			}
-		})
-	}
+	// var appendDataDest = function(input){
+	// 	$.ajax({
+	// 		type: "GET",
+	// 		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
+	// 		success: function(data){
+	// 			$('#dest-list').empty();
+	// 			for(var x = 0; x < data.length; x++){
+	// 				console.log(data[x]['description'])
+	// 				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+	// 				$('#dest-list').append(newOption);
+	// 			}
+	// 		}
+	// 	})
+	// }
 })
 
 // var round = true
