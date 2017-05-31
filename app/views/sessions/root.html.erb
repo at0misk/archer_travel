@@ -333,11 +333,10 @@
 			</select>
 		</div>
 	</div>
-<div class="input-group">
-    <input type="text" id="datetimepicker" class="form-control" name="date">
-    <label class="input-group-addon btn" for="date">
-       <span class="fa fa-calendar open-datetimepicker"></span>
-    </label>
+<div class="form-group">
+    <div class="input-group date" id="datetimepicker1">
+        <input type="text" class="form-control" /><span class="input-group-addon"><span class="glyphicon-calendar glyphicon"></span></span>
+         </div>
 </div>
 	<div class="form-group">
 	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
@@ -456,9 +455,8 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
-$('.open-datetimepicker').click(function(event){
-    event.preventDefault();
-    $('#datetimepicker').click();
+$('#datetimepicker1 input').click(function(event){
+   $('#datetimepicker1 ').data("DateTimePicker").show();
 });
 
 // Autocomplete AJAX Calls
