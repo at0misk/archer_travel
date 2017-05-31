@@ -486,13 +486,14 @@
 $(document).on('turbolinks:load',function(){
 
 var x = 1;
-
-$(".multi-button").on('click', function(){
-	$('.append-div').removeClass('hide');
-	$('.append-div').addClass('block');
-	$('.addOrigin').addClass('margin-bottom-2');
-	$('.append-div').append("<div class='row bottom-group bottom-group-border'></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][origin]' class='form-control' id='origin' list='origin-list' autocomplete='off'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][destination]' class='form-control' id='destination' list='dest-list' autocomplete='off'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[0][departdate]' class='form-control' id='depart' min=''></div></div><div id='multiDiv' class='form-group col-sm-12 btnDiv multiDiv'><button id='multiButton' class='multi-button btn btn-primary btn-sm' type='button'>Add City</button></div>");
-	x++;
+$(document).on('ready', function(){
+	$(".multi-button").on('click', function(){
+		$('.append-div').removeClass('hide');
+		$('.append-div').addClass('block');
+		$('.addOrigin').addClass('margin-bottom-2');
+		$('.append-div').append("<div class='row bottom-group bottom-group-border'></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][origin]' class='form-control' id='origin' list='origin-list' autocomplete='off'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][destination]' class='form-control' id='destination' list='dest-list' autocomplete='off'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[0][departdate]' class='form-control' id='depart' min=''></div></div><div id='multiDiv' class='form-group col-sm-12 btnDiv multiDiv'><button id='multiButton' class='multi-button btn btn-primary btn-sm' type='button'>Add City</button></div>");
+		x++;
+	})
 })
 
 // var round = true
