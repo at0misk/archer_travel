@@ -170,11 +170,9 @@
 		background: transparent;
     	border-color: white;
 	}
-	.multi-button{
-
-	}
-	.buttonShow{
-		display: inline-block
+	#multiButton{
+		background: transparent;
+    	border-color: white;	
 	}
 	.myTabs a{
 		color: #333;
@@ -481,14 +479,14 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
-		$('.multi-button').addClass('buttonShow');
+		$('.multi-button').addClass('block');
 		$('.multi-button').removeClass('hide');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
 		$('.multi-button').addClass('hide');
-		$('.multi-button').removeClass('buttonShow');
+		$('.multi-button').removeClass('block');
 	}
 	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
@@ -496,7 +494,7 @@ $('#air_type').change(function(){
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
 		$('.multi-button').addClass('hide');
-		$('.multi-button').removeClass('buttonShow');
+		$('.multi-button').removeClass('block');
 	}
 })
 
