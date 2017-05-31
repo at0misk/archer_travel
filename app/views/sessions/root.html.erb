@@ -166,6 +166,10 @@
 		background: transparent;
     	border-color: white;
 	}
+	#flightButton{
+		background: transparent;
+    	border-color: white;
+	}
 	.myTabs a{
 		color: #333;
 		background-color: white;
@@ -351,9 +355,18 @@
 			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return">
 		</div>
 	</div>
-	Return: <input type="text" name="citypairs[0][returndate]">
-	<input type="hidden" name="adults" value="1">
-	<input type="hidden" name="children" value="0">
+	<div class="form-group">
+	    <label for="adults" class="col-lg-4 control-label col-md-6">Adults</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="number" name="adults" class="form-control" id="adults" min="1">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="children" class="col-lg-4 control-label col-md-6">Children</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="number" name="children" class="form-control" id="adults" min="0">
+		</div>
+	</div>
 	<input type="hidden" name="isWidget" value="true">
 	<input type="submit" value="submit" id="flightButton">
 </form>
