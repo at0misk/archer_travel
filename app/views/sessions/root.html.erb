@@ -481,6 +481,8 @@ $('#air_type').change(function(){
 		$('.bottom-group').addClass('bottom-group-border');
 		$('#multiButton').addClass('block');
 		$('.multiDiv').addClass('block');
+		$('#multiButton').removeClass('hide');
+		$('.multiDiv').removeClass('hide');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
