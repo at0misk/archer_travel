@@ -447,16 +447,21 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
-$('#origin').keydown(function() {
-	var text = $(this).val()
-	console.log("key");
-	$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + text + "&type=air", function(data){
-		for(var x = 0; x < data.length; x++){
-			console.log(data[x]['description'])
-			var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-			$('#origin-list').append(newOption);
-		}
-	})
+$('#origin').keydown(function(e) {
+	if(e.keyCode == 8){
+		console.log('back')
+	}
+	else{
+		var text = $(this).val()
+		console.log("key");
+		$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + text + "&type=air", function(data){
+			for(var x = 0; x < data.length; x++){
+				console.log(data[x]['description'])
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+				$('#origin-list').append(newOption);
+			}
+		})
+	}
 });
 
 $('.myTabs a').click(function (e) {
