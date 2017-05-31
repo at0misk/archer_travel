@@ -356,7 +356,7 @@
 			</select>
 		</div>
 	</div>
-	<div class="row bottom-group">
+	<div class="row bottom-group remove-bottom-margin">
 	</div>
 	<div class="form-group">
 	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
@@ -379,7 +379,7 @@
 	<div class="form-group col-sm-12 btnDiv multiDiv">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide">Add City</button>
 	</div>
-	<div class="row bottom-group">
+	<div class="row bottom-group remove-bottom-margin">
 	</div>
 	<div class="form-group return-form-group">
 	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
@@ -487,6 +487,7 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
+		$('.bottom-group').removeClass('remove-bottom-margin');
 		$('.multi-button').addClass('button-show');
 		$('.multi-button').removeClass('hide');
 	}
@@ -495,7 +496,7 @@ $('#air_type').change(function(){
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
-		$('.bottom-group').removeClass('remove-bottom-margin');
+		$('.bottom-group').addClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
 	}
@@ -504,7 +505,7 @@ $('#air_type').change(function(){
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
-		$('.bottom-group').removeClass('remove-bottom-margin');
+		$('.bottom-group').addClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
 	}
