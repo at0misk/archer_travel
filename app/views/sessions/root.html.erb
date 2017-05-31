@@ -479,9 +479,8 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
-		$('#multiButton').addClass('block');
-		$('#multiButton').removeClass('hide');
-		console.log("ARBLASLSDLAB");
+		$('iframe').addClass('block');
+		$('iframe').removeClass('hide');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
