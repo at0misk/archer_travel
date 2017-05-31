@@ -454,7 +454,7 @@ $('#origin').keydown(function() {
 		for(var x = 0; x < data.length; x++){
 			console.log(data[x]['description'])
 			var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-			$('#origin-list')
+			$('#origin-list').append(newOption);
 		}
 	})
 });
