@@ -528,6 +528,7 @@ $(".addOrigin").on('click', function(){
 					console.log(data[x]['description'])
 					var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
 					$("#origin-list" + x).append(newOption);
+					console.log('dynamic');
 				}
 			}
 		})
