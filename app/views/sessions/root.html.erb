@@ -457,15 +457,18 @@ $('#origin').keydown(function(e) {
 	else{
 		var text = $(this).val()
 		console.log("key");
-		appendData(text).delay(800);
+		appendData(text);
 	}
 });
 
 var appendData = function(input){
+	var dataArr = [];
 		$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air", function(data){
-			for(var x = 0; x < data.length; x++){
-				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+			dataArr = data;
+		}).done(function(){
+			for(var x = 0; x < dataArr.length; x++){
+				console.log(dataArr[x]['description'])
+				var newOption = "<option value='" + data[x]['description'] + "'>" + dataArr[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		})
