@@ -568,7 +568,7 @@ $(".addOrigin").on('click', function(){
 			success: function(data){
 				$('#dest-list').empty();
 				for(var i = 0; i < data.length; i++){
-					console.log(dataix]['description'])
+					console.log(data[i]['description'])
 					var newOption = "<option value='" + data[i]['description'] + "'>" + data[i]['description'] + "</option>";
 					$('#dest-list').append(newOption);
 				}
