@@ -485,16 +485,16 @@ $('#air_type').change(function(){
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
-		$('#multiButton').addClass('hide');
-		$('#multiButton').removeClass('block');
+		$('.multi-button').addClass('hide');
+		$('.multi-button').removeClass('block');
 	}
 	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
-		$('#multiButton').addClass('hide');
-		$('#multiButton').removeClass('block');
+		$('.multi-button').addClass('hide');
+		$('.multi-button').removeClass('block');
 	}
 })
 
