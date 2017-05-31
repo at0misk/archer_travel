@@ -444,6 +444,10 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
+$('#origin').keydown(function() {
+	console.log("key");
+});
+
 $('.myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
