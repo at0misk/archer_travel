@@ -200,6 +200,9 @@
 	.bottom-group-border{
 		border-bottom: 1px solid white;
 	}
+	.remove-bottom-margin{
+		margin-bottom: 0px;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -492,6 +495,7 @@ $('#air_type').change(function(){
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
+		$('.bottom-group').removeClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
 	}
@@ -500,6 +504,7 @@ $('#air_type').change(function(){
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
+		$('.bottom-group').removeClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
 	}
