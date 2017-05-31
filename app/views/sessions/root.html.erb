@@ -465,15 +465,16 @@ $(document).on('turbolinks:load',function(){
 
 $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
-		($'.multi-group').addClass('group-border');
+		$('.multi-group').addClass('group-border');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
 	}
-	else if($(this).val() == 'roundtrip'){
+	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
+		$('.multi-group').removeClass('group-border');
 	}
 })
 
