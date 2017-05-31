@@ -170,6 +170,10 @@
 		background: transparent;
     	border-color: white;
 	}
+	#multiButton{
+		background: transparent;
+    	border-color: white;	
+	}
 	.myTabs a{
 		color: #333;
 		background-color: white;
@@ -364,6 +368,9 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
+	<div class="form-group col-sm-12 btnDiv">
+		<button id="multiButton" class="btn btn-primary btn-sm hide">Add City</button>
+	</div>
 	<div class="row bottom-group">
 	</div>
 	<div class="form-group return-form-group">
@@ -472,16 +479,19 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
+		$('#multiButton').removeClass('hide');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
+		$('#multiButton').addClass('hide');
 	}
 	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
+		$('#multiButton').addClass('hide');
 	}
 })
 
