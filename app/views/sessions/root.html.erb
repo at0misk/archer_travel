@@ -382,10 +382,10 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
+	<div class="append-div hide">
+	</div>
 	<div id="multiDiv" class="form-group col-sm-12 btnDiv multiDiv hide">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide addOrigin" type="button">Add City</button>
-	</div>
-	<div class="append-div hide">
 	</div>
 	<div class="row bottom-group hide">
 	</div>
@@ -496,7 +496,7 @@ $(".addOrigin").on('click', function(){
 	$('.append-div').removeClass('hide');
 	$('.append-div').addClass('block');
 	$('.addOrigin').addClass('margin-bottom-2');
-	$('.append-div').append("<div class='cont'><div class='row bottom-group bottom-group-border'></div><div class='row delRow'><button class='btn btn-danger del-button'>X</button></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[" + x + "][origin]' class='form-control' id='origin" + x + "' list='origin-list" + x + "'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[" + x + "][destination]' class='form-control' id='destination" + x + "' list='dest-list" + x + "'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[0][departdate]' class='form-control' id='depart' min=''></div></div></div><datalist id='origin-list" + x + "'></datalist><datalist id='dest-list" + x + "'></datalist>");
+	$('.append-div').append("<div class='cont'><div class='row bottom-group bottom-group-border'></div><div class='row delRow'><button class='btn btn-danger del-button'>X</button></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[" + x + "][origin]' class='form-control' id='origin" + x + "' list='origin-list" + x + "'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[" + x + "][destination]' class='form-control' id='destination" + x + "' list='dest-list" + x + "'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[" + x + "][departdate]' class='form-control' id='depart' min=''></div></div></div><datalist id='origin-list" + x + "'></datalist><datalist id='dest-list" + x + "'></datalist>");
 	$('.del-button').on('click', function(){
 		$(this).parent().parent().remove();
 	})
@@ -585,8 +585,11 @@ $(".addOrigin").on('click', function(){
 // var round = true
 // var one = false
 
+var multi = false;
+
 $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
+		multi = true;
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
 		$('.bottom-group').removeClass('remove-bottom-margin');
@@ -598,6 +601,10 @@ $('#air_type').change(function(){
 		$('.multiDiv').addClass('block');
 	}
 	else if($(this).val() == 'oneway'){
+		if(multi == true){
+			$('.append-div').empty();
+			multi = false;
+		}
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
@@ -609,6 +616,10 @@ $('#air_type').change(function(){
 		$('.multiDiv').removeClass('block');
 	}
 	else if($(this).val() == 'roundtrip'){
+		if(multi == true){
+			$('.append-div').empty();
+			multi = false;
+		}
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
