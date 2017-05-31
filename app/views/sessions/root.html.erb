@@ -448,7 +448,7 @@ $('#origin').keydown(function() {
 	var text = $(this).val()
 	console.log("key");
 	$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + text + "&type=air", function(data){
-		console.log(data[0]);
+		console.log(data[0]['description']);
 	})
 });
 
