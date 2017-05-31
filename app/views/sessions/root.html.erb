@@ -180,7 +180,7 @@
 	.nav-tabs>li.active>a{
 		opacity: 0.8;
 	}
-	.return-form-group{
+	.form-group{
 		  -moz-transition: all 0.3s;
 		  -webkit-transition: all 0.3s;
 		  transition: all 0.3s;
@@ -356,10 +356,10 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div class="form-group">
-	    <label for="return" class="col-lg-4 control-label col-md-6 return-form-group">Return</label>
-	    <div class="col-lg-8 col-md-6 return-form-group">
-			<input type="date" name="citypairs[0][returndate]" class="form-control return-form-group" id="return" min="<%= Date.today %>">
+	<div class="form-group return-form-group">
+	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return" min="<%= Date.today %>">
 		</div>
 	</div>
 	<div class="form-group">
@@ -459,7 +459,7 @@ $(document).on('turbolinks:load',function(){
 // var one = false
 
 $('#air_type').change(function(){
-	if($(this).val() == "oneway"){
+	if($(this).val() == "oneway" && $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
 	}
