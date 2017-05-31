@@ -442,7 +442,6 @@
 </div>
 
 <datalist id="origin-list">
-	<option value="HTML">
 </datalist>
 
 <script type="text/javascript">
@@ -454,6 +453,8 @@ $('#origin').keydown(function() {
 	$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + text + "&type=air", function(data){
 		for(var x = 0; x < data.length; x++){
 			console.log(data[x]['description'])
+			var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+			$('#origin-list')
 		}
 	})
 });
