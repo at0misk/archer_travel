@@ -452,6 +452,11 @@ $('#origin').keydown(function(e) {
 		if(!$(this).val() || $(this).val().length == 1){
 			$('#origin-list').empty();
 		}
+		else{
+			var text = $(this).val()
+			console.log("key");
+			appendData(text);
+		}
 		console.log('back')
 	}
 	else{
