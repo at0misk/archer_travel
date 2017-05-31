@@ -490,8 +490,14 @@
 
 $(document).on('turbolinks:load',function(){
 
-$('input').on('input change', function() {
-  console.log('Changed!');
+$("#origin").on('input', function () {
+    var val = this.value;
+    if($('#allNames option').filter(function(){
+        return this.value === val;        
+    }).length) {
+        //send ajax request
+        alert(this.value);
+    }
 });
 
 var x = 0;
