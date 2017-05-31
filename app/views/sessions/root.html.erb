@@ -339,7 +339,7 @@
 			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination">
 		</div>
 	</div>
-	<div class="form-group">
+	<div class="input-group date">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="text" name="citypairs[0][departdate]" class="form-control" id="depart">
@@ -433,9 +433,7 @@ $('.myTabs a').click(function (e) {
 })
 
 
-
-var $j = jQuery.noConflict();
-dp = $j('#depart').datepicker().data('datepicker');
+dp = $('#depart').datepicker().data('datepicker');
 $('#depart').on('click', function(){
 	dp.show();
 	$('#depart').focus();
