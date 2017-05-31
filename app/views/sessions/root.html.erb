@@ -466,6 +466,7 @@ var appendData = function(input){
 		$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air", function(data){
 			dataArr = data;
 		}).done(function(){
+			$('#origin-list').empty();
 			for(var x = 0; x < dataArr.length; x++){
 				console.log(dataArr[x]['description'])
 				var newOption = "<option value='" + dataArr[x]['description'] + "'>" + dataArr[x]['description'] + "</option>";
