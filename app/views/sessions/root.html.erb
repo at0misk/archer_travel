@@ -725,8 +725,11 @@ $('.myTabs a').click(function (e) {
 // Search By Destination
 
 $('.vegas').click(function(){
+	$('iframe')
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=4111&TargetType=Hot+Destinations");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -734,6 +737,8 @@ $('.vegas').click(function(){
 $('.hawaii').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1702&TargetType=Hot+Destinations");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -741,6 +746,8 @@ $('.hawaii').click(function(){
 $('.europe').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1703&TargetType=Hot+Destinations");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -748,6 +755,8 @@ $('.europe').click(function(){
 $('.alaska').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1705&TargetType=Hot+Destinations");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -755,6 +764,8 @@ $('.alaska').click(function(){
 $('.luxury').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=7");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -762,6 +773,8 @@ $('.luxury').click(function(){
 $('.short').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=10");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -769,6 +782,8 @@ $('.short').click(function(){
 $('.activeDiv').click(function(){
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063");
 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 })
@@ -784,6 +799,7 @@ $("#vacationButton").click(function() {
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
 	$('#resultFrame').addClass('vaca');
+	$('#resultFrame').removeClass('fareGrab');
     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
     addCss();
 })
