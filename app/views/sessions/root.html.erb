@@ -376,7 +376,8 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div id="multiDiv1" class="form-group col-sm-12 btnDiv multiDiv hide">
+<% x = 1 %>
+	<div id="multiDiv<%= x %>" class="form-group col-sm-12 btnDiv multiDiv hide">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide" type="button">Add City</button>
 	</div>
 	<div class="row bottom-group hide">
@@ -480,8 +481,8 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
-$('#multiDiv1').click(function(){
-	$(this).append("<h1>HI</h1>");
+$("#multiDiv<%= x %>").click(function(){
+	$(this).append("<h1>HI<%= x %></h1>");
 })
 
 // var round = true
