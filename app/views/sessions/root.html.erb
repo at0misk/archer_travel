@@ -542,10 +542,10 @@ $(".addOrigin").on('click', function(){
 					})
 		}
 	});
-	$('#destination').keydown(function(e) {
+	$("#destination" + x).keydown(function(e) {
 		if(e.keyCode == 8){
 			if(!$(this).val() || $(this).val().length == 1){
-				$('#dest-list').empty();
+				$("#dest-list" + x).empty();
 			}
 			else{
 				var text = $(this).val();
