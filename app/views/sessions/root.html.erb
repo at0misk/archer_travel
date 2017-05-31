@@ -487,6 +487,7 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
+		$('.bottom-group').removeClass('remove-bottom-margin');
 		$('.bottom-group').removeClass('hide');
 		$('.bottom-group').addClass('block');
 		$('.multi-button').addClass('button-show');
