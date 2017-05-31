@@ -460,6 +460,7 @@ $(document).on('turbolinks:load',function(){
 
 $('#air_type').change(function(){
 	if($(this).val() == "oneway"){
+		console.log('wat')
 		$('return-form-group').addClass('hide');
 	}
 	else if($(this).val() == 'roundtrip'){
