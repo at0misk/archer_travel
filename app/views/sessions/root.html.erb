@@ -449,7 +449,7 @@ $('#origin').keydown(function() {
 	console.log("key");
 	$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + text + "&type=air", function(data){
 		for(var x = 0; x < data.length; x++){
-			console.log(data[x]['descripition'])
+			console.log(data[x]['description'])
 		}
 	})
 });
