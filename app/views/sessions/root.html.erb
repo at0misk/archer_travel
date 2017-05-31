@@ -492,7 +492,7 @@ $(document).on('turbolinks:load',function(){
 
 $("#origin").on('input', function () {
     var val = this.value;
-    if($('#allNames option').filter(function(){
+    if($('#origin-list option').filter(function(){
         return this.value === val;        
     }).length) {
         //send ajax request
