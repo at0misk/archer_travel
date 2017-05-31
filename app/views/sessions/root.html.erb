@@ -491,12 +491,13 @@
 $(document).on('turbolinks:load',function(){
 
 $("#origin").on('input', function () {
-    var val = this.value;
+    var val = value;
     if($('#origin-list option').filter(function(){
-        return this.value === val;        
+        return value === val;        
     }).length) {
-        //send ajax request
-        alert(this.data('foo'));
+	    var selected = $(this).find('option:selected');
+	    var extra = selected.data('foo');
+        alert(extra);
     }
 });
 
@@ -675,7 +676,7 @@ var appendDataOrigin = function(input){
 			$('#origin-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "' data-foo='city'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "' data-foo='type'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		}
