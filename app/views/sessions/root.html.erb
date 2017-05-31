@@ -490,11 +490,7 @@
 
 $(document).on('turbolinks:load',function(){
 
-$('input').autocomplete({
-	select: function(event, ui){
-		console.log("clicked");
-	}
-})
+console.log(monitorEvents($('input')[0]))
 
 var x = 0;
 
