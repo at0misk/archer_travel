@@ -495,9 +495,9 @@ $("#origin").on('input', function () {
     if($('#origin-list option').filter(function(){
         return this.value === val;        
     }).length) {
-	    var selected = $(this).find('option:selected');
-	    var extra = selected.data('foo');
-        alert(extra);
+	    // var selected = $(this).find('option:selected');
+	    // var extra = selected.data('foo');
+        alert(this.label;
     }
 });
 
@@ -676,7 +676,7 @@ var appendDataOrigin = function(input){
 			$('#origin-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "' data-foo='type'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "' label='wat'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		}
