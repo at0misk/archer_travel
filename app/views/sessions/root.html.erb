@@ -169,7 +169,6 @@
 	#flightButton{
 		background: transparent;
     	border-color: white;
-    	float: right;
 	}
 	.myTabs a{
 		color: #333;
@@ -368,7 +367,9 @@
 		</div>
 	</div>
 	<input type="hidden" name="isWidget" value="true">
-	<input type="submit" value="Search" id="flightButton" class="btn btn-primary btn-sm">
+	<div class="form-group col-sm-12 btnDiv">
+		<input type="submit" value="Search" id="flightButton" class="btn btn-primary btn-sm">
+	</div>
 </form>
 </div>
 <div role="tabpanel" class="tab-pane" id="hotels">...</div>
