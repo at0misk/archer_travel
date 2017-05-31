@@ -376,7 +376,7 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div class="form-group col-sm-12 btnDiv multiDiv">
+	<div class="form-group col-sm-12 btnDiv multiDiv hide">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide">Add City</button>
 	</div>
 	<div class="row bottom-group hide">
@@ -492,6 +492,8 @@ $('#air_type').change(function(){
 		$('.bottom-group').addClass('block');
 		$('.multi-button').addClass('button-show');
 		$('.multi-button').removeClass('hide');
+		$('.multiDiv').removeClass('hide');
+		$('.multiDiv').addClass('block');
 	}
 	else if($(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
@@ -501,6 +503,8 @@ $('#air_type').change(function(){
 		$('.bottom-group').addClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
+		$('.multiDiv').addClass('hide');
+		$('.multiDiv').removeClass('block');
 	}
 	else if($(this).val() == 'roundtrip'){
 		$('.return-form-group').addClass('block');
@@ -510,6 +514,8 @@ $('#air_type').change(function(){
 		$('.bottom-group').addClass('remove-bottom-margin');
 		$('.multi-button').addClass('hide');
 		$('.multi-button').removeClass('button-show');
+		$('.multiDiv').addClass('hide');
+		$('.multiDiv').removeClass('block');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
