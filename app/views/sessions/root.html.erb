@@ -324,7 +324,6 @@
 <div role="tabpanel" class="tab-pane active" id="flights">
 	<form id="regularSearchForm" method="post" action="https://evov2.faregrabbr.com/remoteflightmultisearch.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate target="resultFrame">
 	<div class="form-group">
-<%= Date.today %>
 	    <label for="type" class="col-lg-4 control-label col-md-6">Type</label>
 	    <div class="col-lg-8 col-md-6">
 			<select name="type" id="air_type" class="form-control">
@@ -349,13 +348,13 @@
 	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
 	<div class="form-group">
 	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return">
+			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return" min="<%= Date.today %>">
 		</div>
 	</div>
 	<div class="form-group">
