@@ -446,6 +446,9 @@ $(document).on('turbolinks:load',function(){
 
 $('#origin').keydown(function() {
 	console.log("key");
+	$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + this.val() + "&type=air", function(data){
+		console.log(data);
+	})
 });
 
 $('.myTabs a').click(function (e) {
