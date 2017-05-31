@@ -348,7 +348,7 @@
 	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" list="depart-list" autocomplete="off">
 		</div>
 	</div>
 	<div class="form-group">
@@ -444,6 +444,9 @@
 <datalist id="origin-list">
 </datalist>
 
+<datalist id="depart-list">
+</datalist>
+
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
@@ -454,18 +457,18 @@ $('#origin').keydown(function(e) {
 		}
 		else{
 			var text = $(this).val();
-			appendData(text);
+			appendDataOrigin(text);
 		}
 		// console.log('back')
 	}
 	else{
 		var text = $(this).val();
 		// console.log("key");
-		appendData(text);
+		appendDataOrigin(text);
 	}
 });
 
-var appendData = function(input){
+var appendDataOrigin = function(input){
 	$.ajax({
 		type: "GET",
 		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
@@ -475,6 +478,39 @@ var appendData = function(input){
 				console.log(data[x]['description'])
 				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
+			}
+		}
+	})
+}
+
+$('#depart').keydown(function(e) {
+	if(e.keyCode == 8){
+		if(!$(this).val() || $(this).val().length == 1){
+			$('#depart-list').empty();
+		}
+		else{
+			var text = $(this).val();
+			appendDataDepart(text);
+		}
+		// console.log('back')
+	}
+	else{
+		var text = $(this).val();
+		// console.log("key");
+		appendDataDepart(text);
+	}
+});
+
+var appendDataDepart = function(input){
+	$.ajax({
+		type: "GET",
+		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
+		success: function(data){
+			$('#depart-list').empty();
+			for(var x = 0; x < data.length; x++){
+				console.log(data[x]['description'])
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+				$('#depart-list').append(newOption);
 			}
 		}
 	})
