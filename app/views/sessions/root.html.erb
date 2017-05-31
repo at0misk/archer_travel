@@ -501,6 +501,7 @@ $(".addOrigin").on('click', function(){
 	})
 
 		$("#origin" + x).keydown(function(e) {
+		$("#origin-list" + x).empty();
 		if(e.keyCode == 8){
 			if(!$(this).val() || $(this).val().length == 1){
 				$("#origin-list" + x).empty();
