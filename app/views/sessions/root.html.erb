@@ -502,7 +502,7 @@ $(".addOrigin").on('click', function(){
 		$(this).parent().parent().remove();
 	})
 
-		$("#origin" + x).keydown(function(e) {
+		$("#origin" + x).keyup(function(e) {
 		if(e.keyCode == 8){
 			if(!$(this).val() || $(this).val().length == 1){
 				$("#origin-list" + x).empty();
@@ -543,7 +543,7 @@ $(".addOrigin").on('click', function(){
 					})
 		}
 	});
-	$("#destination" + x).keydown(function(e) {
+	$("#destination" + x).keyup(function(e) {
 		if(e.keyCode == 8){
 			if(!$(this).val() || $(this).val().length == 1){
 				$("#dest-list" + x).empty();
@@ -652,10 +652,6 @@ $('#origin').keyup(function(e) {
 	}
 	else{
 		var text = $(this).val();
-		if(text.length == 3){
-			console.log("2");
-			console.log("text")
-		}
 		// console.log("key");
 		appendDataOrigin(text);
 	}
@@ -676,7 +672,7 @@ var appendDataOrigin = function(input){
 	})
 }
 
-$('#destination').keydown(function(e) {
+$('#destination').keyup(function(e) {
 	if(e.keyCode == 8){
 		if(!$(this).val() || $(this).val().length == 1){
 			$('#dest-list').empty();
