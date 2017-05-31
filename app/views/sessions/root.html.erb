@@ -516,7 +516,7 @@ $(".addOrigin").on('click', function(){
 							for(var i = 0; i < data.length; i++){
 								console.log(data[i]['description'])
 								var newOption = "<option value='" + data[i]['description'] + "'>" + data[i]['description'] + "</option>";
-								$("#origin-list" + i).append(newOption);
+								$("#origin-list" + x).append(newOption);
 								console.log("dynamic: I is: " + i + "X is: " + x);
 							}
 						}
@@ -535,7 +535,7 @@ $(".addOrigin").on('click', function(){
 							for(var i = 0; i < data.length; i++){
 								console.log(data[i]['description'])
 								var newOption = "<option value='" + data[i]['description'] + "'>" + data[i]['description'] + "</option>";
-								$("#origin-list" + i).append(newOption);
+								$("#origin-list" + x).append(newOption);
 								console.log('dynamic');
 							}
 						}
@@ -567,9 +567,9 @@ $(".addOrigin").on('click', function(){
 			url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
 			success: function(data){
 				$('#dest-list').empty();
-				for(var x = 0; x < data.length; x++){
-					console.log(data[x]['description'])
-					var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+				for(var i = 0; i < data.length; i++){
+					console.log(dataix]['description'])
+					var newOption = "<option value='" + data[i]['description'] + "'>" + data[i]['description'] + "</option>";
 					$('#dest-list').append(newOption);
 				}
 			}
