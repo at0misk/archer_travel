@@ -377,7 +377,7 @@
 		</div>
 	</div>
 <% x = 1 %>
-	<div id="multiDiv<%= x %>" class="form-group col-sm-12 btnDiv multiDiv hide">
+	<div id="multiDiv" class="form-group col-sm-12 btnDiv multiDiv hide">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide" type="button">Add City</button>
 	</div>
 	<div class="row bottom-group hide">
@@ -481,7 +481,7 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
-$("#multiDiv<%= x %> button").click(function(){
+$("#multiDiv").click(function(){
 	$(this).append("<h1>HI<%= x %></h1>");
 	<% x += 1 %>
 })
