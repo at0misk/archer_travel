@@ -487,11 +487,15 @@ $('#air_type').change(function(){
 		$('.multi-button').addClass('button-show');
 		$('.multi-button').removeClass('hide');
 	}
+	else if($(this).val() == 'oneway'){
+		$('.multi-button').addClass('hide');
+		$('.multi-button').removeClass('button-show');
+	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
 	}
-	if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
+	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
 		$('.top-group').removeClass('top-group-border');
