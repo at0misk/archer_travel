@@ -496,7 +496,7 @@ $("#origin").on('input', function () {
         return this.value === val;        
     }).length) {
         //send ajax request
-        alert(this.value);
+        alert(this.data('foo'));
     }
 });
 
@@ -675,7 +675,7 @@ var appendDataOrigin = function(input){
 			$('#origin-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "' data-foo='city'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		}
