@@ -185,7 +185,10 @@
 		  -webkit-transition: all 0.3s;
 		  transition: all 0.3s;
 	}
-	.group-border{
+	.top-group-border{
+		border-top: 1px solid white;
+	}
+	.bottom-group-border{
 		border-bottom: 1px solid white;
 	}
 </style>
@@ -341,24 +344,22 @@
 			</select>
 		</div>
 	</div>
-	<div class="multi-group">
-		<div class="form-group">
-		    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
-		    <div class="col-lg-8 col-md-6">
-				<input type="text" name="citypairs[0][origin]" class="form-control" id="origin" list="origin-list" autocomplete="off">
-			</div>
+	<div class="form-group top-group">
+	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="citypairs[0][origin]" class="form-control" id="origin" list="origin-list" autocomplete="off">
 		</div>
-		<div class="form-group">
-		    <label for="destination" class="col-lg-4 control-label col-md-6">Destination</label>
-		    <div class="col-lg-8 col-md-6">
-				<input type="text" name="citypairs[0][destination]" class="form-control" id="destination" list="dest-list" autocomplete="off">
-			</div>
+	</div>
+	<div class="form-group">
+	    <label for="destination" class="col-lg-4 control-label col-md-6">Destination</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination" list="dest-list" autocomplete="off">
 		</div>
-		<div class="form-group">
-		    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
-		    <div class="col-lg-8 col-md-6">
-				<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
-			</div>
+	</div>
+	<div class="form-group bottom-group">
+	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
 	<div class="form-group return-form-group">
@@ -465,7 +466,8 @@ $(document).on('turbolinks:load',function(){
 
 $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
-		$('.multi-group').addClass('group-border');
+		$('.top-group').addClass('top-group-border');
+		$('.bottom-group').addClass('bottom-group-border');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
@@ -474,7 +476,8 @@ $('#air_type').change(function(){
 	else if($(this).val() == 'roundtrip' || $(this).val() == 'oneway'){
 		$('.return-form-group').addClass('block');
 		$('.return-form-group').removeClass('hide');
-		$('.multi-group').removeClass('group-border');
+		$('.top-group').removeClass('top-group-border');
+		$('.bottom-group').removeClass('bottom-group-border');
 	}
 })
 
