@@ -342,13 +342,13 @@
 	<div class="form-group">
 	    <label for="destination" class="col-lg-4 control-label col-md-6">Destination</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination">
+			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination" list="dest-list" autocomplete="off">
 		</div>
 	</div>
 	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
-			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" list="depart-list" autocomplete="off">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
 		</div>
 	</div>
 	<div class="form-group">
@@ -444,7 +444,7 @@
 <datalist id="origin-list">
 </datalist>
 
-<datalist id="depart-list">
+<datalist id="dest-list">
 </datalist>
 
 <script type="text/javascript">
@@ -483,10 +483,10 @@ var appendDataOrigin = function(input){
 	})
 }
 
-$('#depart').keydown(function(e) {
+$('#destination').keydown(function(e) {
 	if(e.keyCode == 8){
 		if(!$(this).val() || $(this).val().length == 1){
-			$('#depart-list').empty();
+			$('#dest-list').empty();
 		}
 		else{
 			var text = $(this).val();
@@ -501,16 +501,16 @@ $('#depart').keydown(function(e) {
 	}
 });
 
-var appendDataDepart = function(input){
+var appendDataDest = function(input){
 	$.ajax({
 		type: "GET",
 		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
 		success: function(data){
-			$('#depart-list').empty();
+			$('#dest-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
 				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-				$('#depart-list').append(newOption);
+				$('#dest-list').append(newOption);
 			}
 		}
 	})
