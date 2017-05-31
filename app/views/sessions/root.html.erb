@@ -490,7 +490,9 @@
 
 $(document).on('turbolinks:load',function(){
 
-console.log(monitorEvents($('input')[0]))
+document.querySelector('input').addEventListener('input', function() {
+  console.log('clicked!');
+});
 
 var x = 0;
 
