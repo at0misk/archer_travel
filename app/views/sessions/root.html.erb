@@ -459,10 +459,10 @@ $(document).on('turbolinks:load',function(){
 // var one = false
 
 $('#air_type').change(function(){
-	if($(this.val() == "oneway")){
+	if($(this).val() == "oneway"){
 		$('return-form-group').addClass('hide');
 	}
-	else if($(this.val() == 'roundtrip')){
+	else if($(this).val() == 'roundtrip'){
 		$('return-form-group').addClass('block');
 	}
 })
