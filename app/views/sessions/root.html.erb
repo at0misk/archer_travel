@@ -119,13 +119,18 @@
 	}
 	#resultFrame{
 		border-width: 0px;
-		padding-left: 25%;
 		margin-top: 20px;
 		height: 2300px;
 		width: 100%;
 		  -moz-transition: all 0.3s;
 		  -webkit-transition: all 0.3s;
 		  transition: all 0.3s;
+	}
+	.fareGrab{
+		padding-left: 0%;
+	}
+	.vaca{
+		padding-left: 25%;
 	}
 	.block{
 		display: block;
@@ -309,7 +314,22 @@
 </div>
 <div role="tabpanel" class="tab-pane" id="flights">
 	<form id="regularSearchForm" method="post" action="https://evov2.faregrabbr.com/remoteflightmultisearch.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate target="resultFrame">
-	<input type="hidden" name="type" value="roundtrip">
+	<div class="form-group">
+	    <label for="type" class="col-lg-4 control-label col-md-6">Type</label>
+	    <div class="col-lg-8 col-md-6">
+			<select name="type" id="air_type" class="form-control">
+				<option value="roundtrip">Round Trip</option>
+				<option value="oneway">One Way</option>
+				<option value="multicity">Multi City</option>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="citypairs[0][origin]" class="form-control" id="origin">
+		</div>
+	</div>
 	Origin: <input type="text" name="citypairs[0][origin]">
 	Destination: <input type="text" name="citypairs[0][destination]">
 	Depart: <input type="text" name="citypairs[0][departdate]">
@@ -463,6 +483,7 @@ $('.activeDiv').click(function(){
 $("#vacationButton").click(function() {
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('vaca');
     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
     addCss();
 })
@@ -470,6 +491,7 @@ $("#vacationButton").click(function() {
 $("#flightButton").click(function() {
 	$('#resultFrame').removeClass('hide');
 	$('#resultFrame').addClass('block');
+	$('#resultFrame').addClass('fareGrab');
     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
     addCss();
 })
