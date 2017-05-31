@@ -334,7 +334,7 @@
 </div>
 <div role="tabpanel" class="tab-pane active" id="flights">
 	<form id="regularSearchForm" method="post" action="https://evov2.faregrabbr.com/remoteflightmultisearch.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate target="resultFrame">
-	<div class="form-group row">
+	<div class="form-group">
 	    <label for="type" class="col-lg-4 control-label col-md-6">Type</label>
 	    <div class="col-lg-8 col-md-6">
 			<select name="type" id="air_type" class="form-control">
@@ -344,37 +344,41 @@
 			</select>
 		</div>
 	</div>
-	<div class="form-group row top-group">
+	<div class="row top-group">
+	</div>
+	<div class="form-group">
 	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="text" name="citypairs[0][origin]" class="form-control" id="origin" list="origin-list" autocomplete="off">
 		</div>
 	</div>
-	<div class="form-group row ">
+	<div class="form-group">
 	    <label for="destination" class="col-lg-4 control-label col-md-6">Destination</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination" list="dest-list" autocomplete="off">
 		</div>
 	</div>
-	<div class="form-group row  bottom-group">
+	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div class="form-group row  return-form-group">
+	<div class="row bottom-group">
+	</div>
+	<div class="form-group return-form-group">
 	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div class="form-group row ">
+	<div class="form-group">
 	    <label for="adults" class="col-lg-4 control-label col-md-6">Adults</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="number" name="adults" class="form-control" id="adults" min="1" value="1">
 		</div>
 	</div>
-	<div class="form-group row ">
+	<div class="form-group">
 	    <label for="children" class="col-lg-4 control-label col-md-6">Children</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="number" name="children" class="form-control" id="children" min="0" value="0">
