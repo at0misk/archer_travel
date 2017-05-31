@@ -468,7 +468,7 @@ var appendData = function(input){
 		}).done(function(){
 			for(var x = 0; x < dataArr.length; x++){
 				console.log(dataArr[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "'>" + dataArr[x]['description'] + "</option>";
+				var newOption = "<option value='" + dataArr[x]['description'] + "'>" + dataArr[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		})
