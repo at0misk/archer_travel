@@ -462,17 +462,18 @@ $('#origin').keydown(function(e) {
 });
 
 var appendData = function(input){
-	var dataArr = [];
-		$.get("https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air", function(data){
-			dataArr = data;
-		}).done(function(){
+	$.ajax({
+		type: "GET",
+		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
+		success: function(data){
 			$('#origin-list').empty();
-			for(var x = 0; x < dataArr.length; x++){
-				console.log(dataArr[x]['description'])
-				var newOption = "<option value='" + dataArr[x]['description'] + "'>" + dataArr[x]['description'] + "</option>";
+			for(var x = 0; x < data.length; x++){
+				console.log(data[x]['description'])
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
-		})
+		}
+	})
 }
 
 $('.myTabs a').click(function (e) {
