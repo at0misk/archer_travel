@@ -180,6 +180,11 @@
 	.nav-tabs>li.active>a{
 		opacity: 0.8;
 	}
+	.form-group{
+		  -moz-transition: all 0.3s;
+		  -webkit-transition: all 0.3s;
+		  transition: all 0.3s;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -351,7 +356,7 @@
 			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart" min="<%= Date.today %>">
 		</div>
 	</div>
-	<div class="form-group">
+	<div class="form-group return-form-group">
 	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
 	    <div class="col-lg-8 col-md-6">
 			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return" min="<%= Date.today %>">
@@ -450,8 +455,16 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
+// var round = true
+// var one = false
+
 $('#air_type').change(function(){
-	console.log($(this).val());
+	if($(this.val() == "oneway")){
+		$('return-form-group').addClass('hide');
+	}
+	else if($(this.val() == 'roundtrip')){
+		$('return-form-group').addClass('block');
+	}
 })
 
 // Autocomplete AJAX Calls
