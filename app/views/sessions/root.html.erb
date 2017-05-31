@@ -333,10 +333,24 @@
 			<input type="text" name="citypairs[0][origin]" class="form-control" id="origin">
 		</div>
 	</div>
-	Origin: <input type="text" name="citypairs[0][origin]">
-	Destination: <input type="text" name="citypairs[0][destination]">
-	Depart: <input type="text" name="citypairs[0][departdate]">
-	Return: <input type="text" name="citypairs[0][returndate]">
+	<div class="form-group">
+	    <label for="destination" class="col-lg-4 control-label col-md-6">Destination</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="citypairs[0][destination]" class="form-control" id="destination">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="citypairs[0][returndate]" class="form-control" id="return">
+		</div>
+	</div>
 	<input type="hidden" name="adults" value="1">
 	<input type="hidden" name="children" value="0">
 	<input type="hidden" name="isWidget" value="true">
