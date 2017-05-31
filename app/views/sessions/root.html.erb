@@ -174,6 +174,9 @@
 		background: transparent;
     	border-color: white;	
 	}
+	.button-show{
+		display: inline-block;
+	}
 	.myTabs a{
 		color: #333;
 		background-color: white;
@@ -479,7 +482,7 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
-		$('.multi-button').addClass('block');
+		$('.multi-button').addClass('button-show');
 		$('.multi-button').removeClass('hide');
 	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
@@ -492,7 +495,7 @@ $('#air_type').change(function(){
 		$('.top-group').removeClass('top-group-border');
 		$('.bottom-group').removeClass('bottom-group-border');
 		$('.multi-button').addClass('hide');
-		$('.multi-button').removeClass('block');
+		$('.multi-button').removeClass('button-show');
 	}
 })
 
