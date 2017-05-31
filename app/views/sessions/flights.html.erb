@@ -47,11 +47,14 @@
 		/*margin-bottom: 5%;*/
 	}
 </style>
-<form id="regularSearchForm" method="post" action="https://evov2.faregrabbr.com/remoteflightmultisearch.php" novalidate>
+<form id="regularSearchForm" method="post" action="https://evov2.faregrabbr.com/remoteflightmultisearch.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate>
 	<input type="hidden" name="type" value="roundtrip">
 	Origin: <input type="text" name="citypairs[0][origin]">
 	Destination: <input type="text" name="citypairs[0][destination]">
 	Depart: <input type="text" name="citypairs[0][departdate]">
 	Return: <input type="text" name="citypairs[0][returndate]">
+	<input type="hidden" name="adults" value="1">
+	<input type="hidden" name="children" value="0">
+	<input type="hidden" name="isWidget" value="true">
 	<input type="submit" value="submit">
 </form>
