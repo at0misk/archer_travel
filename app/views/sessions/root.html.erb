@@ -185,6 +185,9 @@
 		  -webkit-transition: all 0.3s;
 		  transition: all 0.3s;
 	}
+	.group-border{
+		border-bottom: 1px solid white;
+	}
 </style>
 <div class="row landingRow">
 	<div class="container">
@@ -461,6 +464,9 @@ $(document).on('turbolinks:load',function(){
 // var one = false
 
 $('#air_type').change(function(){
+	if($(this).val() == 'multicity'){
+		($'.multi-group').addClass('group-border');
+	}
 	if($(this).val() == "oneway" || $(this).val() == 'multicity'){
 		$('.return-form-group').addClass('hide');
 		$('.return-form-group').removeClass('block');
