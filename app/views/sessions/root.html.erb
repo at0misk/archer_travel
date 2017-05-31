@@ -495,76 +495,77 @@ $(".addOrigin").on('click', function(){
 	$('.append-div').removeClass('hide');
 	$('.append-div').addClass('block');
 	$('.addOrigin').addClass('margin-bottom-2');
-	$('.append-div').append("<div class='cont'><div class='row bottom-group bottom-group-border'></div><div class='row delRow'><button class='btn btn-danger del-button'>X</button></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][origin]' class='form-control' id='origin' list='origin-list' autocomplete='off'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][destination]' class='form-control' id='destination' list='dest-list' autocomplete='off'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[0][departdate]' class='form-control' id='depart' min=''></div></div></div>");
+	$('.append-div').append("<div class='cont'><div class='row bottom-group bottom-group-border'></div><div class='row delRow'><button class='btn btn-danger del-button'>X</button></div><div class='form-group'><label for='origin' class='col-lg-4 control-label col-md-6'>Origin</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][origin]' class='form-control' id='origin" + x + "' list='origin-list' autocomplete='off'></div></div><div class='form-group'><label for='destination' class='col-lg-4 control-label col-md-6'>Destination</label><div class='col-lg-8 col-md-6'><input type='text' name='citypairs[0][destination]' class='form-control' id='destination' list='dest-list' autocomplete='off'></div></div><div class='form-group'><label for='depart' class='col-lg-4 control-label col-md-6'>Depart</label><div class='col-lg-8 col-md-6'><input type='date' name='citypairs[0][departdate]' class='form-control' id='depart' min=''></div></div></div>");
 	x++;
 	$('.del-button').on('click', function(){
 		$(this).parent().parent().remove();
 	})
-	$('#origin').keydown(function(e) {
-	if(e.keyCode == 8){
-		if(!$(this).val() || $(this).val().length == 1){
-			$('#origin-list').empty();
+
+		$("#origin" + x).keydown(function(e) {
+		if(e.keyCode == 8){
+			if(!$(this).val() || $(this).val().length == 1){
+				$('#origin-list').empty();
+			}
+			else{
+				var text = $(this).val();
+				appendDataOrigin(text);
+			}
+			// console.log('back')
 		}
 		else{
 			var text = $(this).val();
+			// console.log("key");
 			appendDataOrigin(text);
 		}
-		// console.log('back')
-	}
-	else{
-		var text = $(this).val();
-		// console.log("key");
-		appendDataOrigin(text);
-	}
-});
+	});
 
-var appendDataOrigin = function(input){
-	$.ajax({
-		type: "GET",
-		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
-		success: function(data){
-			$('#origin-list').empty();
-			for(var x = 0; x < data.length; x++){
-				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-				$('#origin-list').append(newOption);
+	var appendDataOrigin = function(input){
+		$.ajax({
+			type: "GET",
+			url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
+			success: function(data){
+				$('#origin-list').empty();
+				for(var x = 0; x < data.length; x++){
+					console.log(data[x]['description'])
+					var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+					$('#origin-list').append(newOption);
+				}
 			}
-		}
-	})
-}
+		})
+	}
 
-$('#destination').keydown(function(e) {
-	if(e.keyCode == 8){
-		if(!$(this).val() || $(this).val().length == 1){
-			$('#dest-list').empty();
+	$('#destination').keydown(function(e) {
+		if(e.keyCode == 8){
+			if(!$(this).val() || $(this).val().length == 1){
+				$('#dest-list').empty();
+			}
+			else{
+				var text = $(this).val();
+				appendDataDest(text);
+			}
+			// console.log('back')
 		}
 		else{
 			var text = $(this).val();
+			// console.log("key");
 			appendDataDest(text);
 		}
-		// console.log('back')
-	}
-	else{
-		var text = $(this).val();
-		// console.log("key");
-		appendDataDest(text);
-	}
-});
+	});
 
-var appendDataDest = function(input){
-	$.ajax({
-		type: "GET",
-		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
-		success: function(data){
-			$('#dest-list').empty();
-			for(var x = 0; x < data.length; x++){
-				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
-				$('#dest-list').append(newOption);
+	var appendDataDest = function(input){
+		$.ajax({
+			type: "GET",
+			url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=air",
+			success: function(data){
+				$('#dest-list').empty();
+				for(var x = 0; x < data.length; x++){
+					console.log(data[x]['description'])
+					var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+					$('#dest-list').append(newOption);
+				}
 			}
-		}
-	})
-}
+		})
+	}
 })
 
 // var round = true
