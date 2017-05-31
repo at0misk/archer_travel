@@ -639,7 +639,7 @@ $('#air_type').change(function(){
 
 // Autocomplete AJAX Calls
 
-$('#origin').keydown(function(e) {
+$('#origin').keyup(function(e) {
 	if(e.keyCode == 8){
 		if(!$(this).val() || $(this).val().length == 1){
 			$('#origin-list').empty();
