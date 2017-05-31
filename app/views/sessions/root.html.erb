@@ -492,8 +492,6 @@ $(document).on('turbolinks:load',function(){
 
 $('input').on('input change', function() {
   console.log('Changed!');
-  var selected = $(this).find('option:selected');
-  console.log(selected.data('foo'))
 });
 
 var x = 0;
@@ -704,7 +702,7 @@ var appendDataDest = function(input){
 			$('#dest-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "' data-foo='city'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
 				$('#dest-list').append(newOption);
 			}
 		}
