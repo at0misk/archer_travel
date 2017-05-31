@@ -490,6 +490,10 @@
 
 $(document).on('turbolinks:load',function(){
 
+$('datalist').click(function(){
+	console.log("clicked");
+})
+
 var x = 0;
 
 $(".addOrigin").on('click', function(){
