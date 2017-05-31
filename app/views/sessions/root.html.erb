@@ -1,9 +1,9 @@
 <style type="text/css">
-/** {
+* {
   background: #000 !important;
   color: #0f0 !important;
   outline: solid #f00 1px !important;
-}*/
+}
 	.landingRow{
 		background: linear-gradient(to bottom right, #1cb1d1, #3d515b);
 		/*background-image: url('/assets/background.png');*/
@@ -356,7 +356,7 @@
 			</select>
 		</div>
 	</div>
-	<div class="row bottom-group remove-bottom-margin">
+	<div class="row bottom-group hide">
 	</div>
 	<div class="form-group">
 	    <label for="origin" class="col-lg-4 control-label col-md-6">Origin</label>
@@ -379,7 +379,7 @@
 	<div class="form-group col-sm-12 btnDiv multiDiv">
 		<button id="multiButton" class="multi-button btn btn-primary btn-sm hide">Add City</button>
 	</div>
-	<div class="row bottom-group remove-bottom-margin">
+	<div class="row bottom-group hide">
 	</div>
 	<div class="form-group return-form-group">
 	    <label for="return" class="col-lg-4 control-label col-md-6">Return</label>
@@ -487,7 +487,7 @@ $('#air_type').change(function(){
 	if($(this).val() == 'multicity'){
 		$('.top-group').addClass('top-group-border');
 		$('.bottom-group').addClass('bottom-group-border');
-		$('.bottom-group').removeClass('remove-bottom-margin');
+		$('.bottom-group').removeClass('hide');
 		$('.multi-button').addClass('button-show');
 		$('.multi-button').removeClass('hide');
 	}
