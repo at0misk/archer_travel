@@ -481,7 +481,7 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
-$("#multiDiv<%= x %>").click(function(){
+$("#multiDiv<%= x %> button").click(function(){
 	$(this).append("<h1>HI<%= x %></h1>");
 	<% x += 1 %>
 })
