@@ -449,6 +449,9 @@ $(document).on('turbolinks:load',function(){
 
 $('#origin').keydown(function(e) {
 	if(e.keyCode == 8){
+		if($('this').val() == ''){
+			$('#origin-list').empty();
+		}
 		console.log('back')
 	}
 	else{
