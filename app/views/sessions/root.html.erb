@@ -450,6 +450,8 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
+// Autocomplete AJAX Calls
+
 $('#origin').keydown(function(e) {
 	if(e.keyCode == 8){
 		if(!$(this).val() || $(this).val().length == 1){
@@ -490,14 +492,14 @@ $('#destination').keydown(function(e) {
 		}
 		else{
 			var text = $(this).val();
-			appendDataDepart(text);
+			appendDataDest(text);
 		}
 		// console.log('back')
 	}
 	else{
 		var text = $(this).val();
 		// console.log("key");
-		appendDataDepart(text);
+		appendDataDest(text);
 	}
 });
 
@@ -516,6 +518,8 @@ var appendDataDest = function(input){
 	})
 }
 
+// Tab Forms
+
 $('.myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
@@ -530,6 +534,8 @@ $('.myTabs a').click(function (e) {
 // 	$('#destinationSearch').val("China");
 // 	$('#vacationButton').click();
 // })
+
+// Search By Destination
 
 $('.vegas').click(function(){
 	$('#resultFrame').removeClass('hide');
