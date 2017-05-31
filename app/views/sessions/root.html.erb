@@ -481,9 +481,11 @@
 <script type="text/javascript">
 $(document).on('turbolinks:load',function(){
 
+var x = 1;
+
 $("#multiDiv").on('click', function(){
-	$(this).append("<h1>HI<%= x %></h1>");
-	<% x += 1 %>
+	$(this).append("<h1>HI" + x + "</h1>");
+	x++;
 })
 
 // var round = true
