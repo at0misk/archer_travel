@@ -341,9 +341,8 @@
 	</div>
 	<div class="form-group">
 	    <label for="depart" class="col-lg-4 control-label col-md-6">Depart</label>
-	    <div class="col-lg-8 col-md-6">
-			<input type="date" name="citypairs[0][departdate]" class="form-control" id="depart">
-			<label class="fa fa-calendar open-datetimepicker">
+	    <div class="col-lg-8 col-md-6 depart-cont">
+			<input type="text" name="citypairs[0][departdate]" class="form-control" id="depart">
 		</div>
 	</div>
 	<div class="form-group">
@@ -433,9 +432,7 @@ $('.myTabs a').click(function (e) {
   $(this).tab('show')
 })
 
-$('.open-datetimepicker').click(function(event){
-    event.preventDefault();
-    $('#depart').click();
+$('.depart-cont input').datepicker({
 });
 
 // $('#sydney').click(function(){
