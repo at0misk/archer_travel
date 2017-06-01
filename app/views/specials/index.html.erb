@@ -61,6 +61,7 @@
     	text-align: justify;
     	margin: 15% 0% 0% 2%;
     	padding: 3%;
+    	width: 100%;
 	}
 	.testing{
 		height: 5000px;
@@ -91,6 +92,13 @@
 		display: inline-block;
 		float: right;
 	}
+	.topHeader{
+		display: inline-block;
+	}
+	.priceTop{
+		float: right;
+		margin-top: 5%;
+	}
 </style>
 	<div class="row landingRow">
 	</div>
@@ -99,8 +107,8 @@
 	<% x = 0 %>
 	<% @specials.each do |val| %>
 		<div class="col-sm-6">
-			<h2>Testing</h2><span>something sdfasdf</span>
-			<a href="/specials/<%= val.id %>"><div class="specialBox"><h2 class="cardHeader"><%= val.title %></h2><span class="price"><%= number_to_currency(val.price) %></span><p><%= val.description %></p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
+			<h2 class="topHeader"><%= val.title %></h2><span class="priceTop"><%= number_to_currency(val.price) %></span>
+			<a href="/specials/<%= val.id %>"><div class="specialBox"><p><%= val.description %></p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
 		</div>
 		<% x += 1 %>
 		<% if x == 2 %>
