@@ -491,9 +491,9 @@
 $(document).on('turbolinks:load',function(){
 
 $("#origin").on('input', function () {
-    var val = this.data('foo');
+    var val = this.value;
     if($('#origin-list option').filter(function(){
-        return this.data('foo') === val;        
+        return this.value === val;        
     }).length) {
 	    var selected = $('#origin').find('#origin-list option:selected');
 	    // var extra = selected.data('foo');
