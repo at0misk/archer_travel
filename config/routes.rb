@@ -13,18 +13,5 @@ Rails.application.routes.draw do
 	get 'about' => 'sessions#about'
 	get 'contact' => 'sessions#contact'
 	post 'contact' => 'sessions#send_mail'
-	get 'hawaii' => 'sessions#hawaii'
-	get 'vegas' => 'sessions#vegas'
-	get 'alaska' => 'sessions#alaska'
-	get 'europe' => 'sessions#europe'
-	get 'luxury' => 'sessions#luxury'
-	get 'short' => 'sessions#short'
-	get 'active' => 'sessions#active'
-	get 'carribean' => 'sessions#carribean'
-	get 'distinct' => 'sessions#distinct'
-	get 'river' => 'sessions#river'
-	get 'privacy' => 'sessions#privacy'
-	get 'terms' => 'sessions#terms'
-	get 'flights' => 'sessions#flights'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
