@@ -21,6 +21,7 @@
 		text-align: center;
 		color: #333;
 		margin-bottom: 50px;
+		background: #f3f3f3;
 	}
 	.secondDiv p{
 		text-align: justify;
@@ -87,7 +88,6 @@
 		font-size: 20px;
 	}
 	.specialRow{
-		background: #f3f3f3;
     	padding: 2%;
 	}
 	.or{
@@ -470,6 +470,20 @@
 			<iframe src="" name="resultFrame" id="resultFrame" class="hide"></iframe>
 	</div>
 </div>
+<% if @special %>
+<div class="row specialRow">
+	<div class="container">
+		<div class="col-sm-6 specialImageDiv">
+			<a href="/specials/<%= @special.id %>"><%= image_tag(@special.image.url, :class => "img-responsive specialImg") %></a>
+		</div>
+		<div class="col-sm-6">
+			<h3 class="specialHeader"><%= @special.title %></h3>
+			<h3 class="price"><%= number_to_currency(@special.price) %></h3>
+			<p><%= @special.description %><a href="specials/<%= @special.id %>"> Learn More!</a></p>
+		</div>
+	</div>
+</div>
+<% end %>
 <div class="row secondRow">
 	<div class="container secondRowCont">
 		<div class="col-sm-4 secondDiv">
@@ -486,20 +500,6 @@
 		</div>
 	</div>
 </div>
-<% if @special %>
-<div class="row specialRow">
-	<div class="container">
-		<div class="col-sm-6 specialImageDiv">
-			<a href="/specials/<%= @special.id %>"><%= image_tag(@special.image.url, :class => "img-responsive specialImg") %></a>
-		</div>
-		<div class="col-sm-6">
-			<h3 class="specialHeader"><%= @special.title %></h3>
-			<h3 class="price"><%= number_to_currency(@special.price) %></h3>
-			<p><%= @special.description %><a href="specials/<%= @special.id %>"> Learn More!</a></p>
-		</div>
-	</div>
-</div>
-<% end %>
 <div class="row thirdRow">
 	<div class="row breakRow">
 		<div class="container">
