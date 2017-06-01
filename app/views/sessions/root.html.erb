@@ -493,7 +493,7 @@ $(document).on('turbolinks:load',function(){
 $("#origin").on('input', function () {
     var val = this.value;
     if($('#origin-list option').filter(function(){
-        return this.value === val;        
+        return this.data('foo') === val;        
     }).length) {
 	    var selected = $(this).find('option:selected');
 	    // var extra = selected.data('foo');
@@ -676,7 +676,7 @@ var appendDataOrigin = function(input){
 			$('#origin-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "' label='wat'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "' data-foo='wat'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		}
