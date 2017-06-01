@@ -20,7 +20,7 @@
 		.navbar-collapse{
 			border-bottom: 1px solid;
 		}
-		.specialBox{
+		#boxSmall{
 			height: auto !important;
 		}
 	}
@@ -34,7 +34,7 @@
     		width: 100%;
 		}
 		.specialBox{
-			height: 200px !important;
+			height: 200px;
 		}
 	}
 	.landingDiv{
@@ -151,7 +151,7 @@
 	<% @specials.each do |val| %>
 		<div class="col-sm-6">
 			<h2 class="topHeader"><%= val.title %></h2><span class="priceTop"><%= number_to_currency(val.price) %></span>
-			<a href="/specials/<%= val.id %>"><div class="specialBox"><p><%= val.description %></p><p class="learnmore">Learn More!</p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
+			<a href="/specials/<%= val.id %>"><div class="specialBox" id="boxSmall"><p><%= val.description %></p><p class="learnmore">Learn More!</p><%= image_tag( val.image.url, :class => "img-responsive") %></div></a>
 		</div>
 		<% x += 1 %>
 		<% if x == 2 %>
