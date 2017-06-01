@@ -492,13 +492,13 @@ $(document).on('turbolinks:load',function(){
 
 $("#origin").on('input', function () {
     var val = this.value;
-    if($('#origin-list option').filter(function(){
-        return this.value === val;        
-    }).length) {
-	    var selected = $(this).find('option:selected');
+    // if($('#origin-list option').filter(function(){
+    //     return this.value === val;        
+    // }).length) {
+	    var selected = $(this).find('#origin-list option');
 	    // var extra = selected.data('foo');
         alert(selected.val());
-    }
+    // }
 });
 
 var x = 0;
