@@ -561,26 +561,26 @@ var appendDataPlace = function(input){
 			$('#place-list').empty();
 			for(var j = 0; j < data.length; j++){
 				console.log(data[j]['description'])
-				var newOption = "<option value='" + data[j]['description'] + "' data-type='wat'>" + data[j]['description'] + "</option>";
+				var newOption = "<option value='" + data[j]['description'] + "' data-type=" + data[j]['type'] + ">" + data[j]['description'] + "</option>";
 				$('#place-list').append(newOption);
 			}
 		}
 	})
 }
 
-// $("#place").on('input', function () {
-//     var val = this.value;
-//     if($('#origin-list option').filter(function(){
-//         return this.value === val;        
-//     }).length) {
-// 	    $('#origin-list option').each(function() {
-// 	    if($(this).val() == val){
-// 	    	// change hidden input to "type" for car
-// 	    	alert($(this).data('foo'));
-// 		   }
-// 		});
-//     }
-// });
+$("#place").on('input', function () {
+    var val = this.value;
+    if($('#place-list option').filter(function(){
+        return this.value === val;        
+    }).length) {
+	    $('#place-list option').each(function() {
+	    if($(this).val() == val){
+	    	// change hidden input to "type" for car
+	    	alert($(this).data('type'));
+		   }
+		});
+    }
+});
 
 var x = 0;
 
