@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 	get 'about' => 'sessions#about'
 	get 'contact' => 'sessions#contact'
 	post 'contact' => 'sessions#send_mail'
+	get 'privacy' => 'sessions#privacy'
+	get 'terms' => 'sessions#terms'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
