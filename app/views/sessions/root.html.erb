@@ -495,7 +495,7 @@ $("#origin").on('input', function () {
     if($('#origin-list option').filter(function(){
         return this.value === val;        
     }).length) {
-	    var selected = $('#origin').find('#origin-list option:selected');
+	    var selected = $('#origin-list').find('option:selected');
 	    // var extra = selected.data('foo');
         alert(selected.val());
     }
