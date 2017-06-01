@@ -576,7 +576,8 @@ $("#place").on('input', function () {
 	    $('#place-list option').each(function() {
 	    if($(this).val() == val){
 	    	// change hidden input to "type" for car
-	    	alert($(this).data('type'));
+	    	// alert($(this).data('type'));
+	    	$('#locationType').val($(this).data('type'))
 		   }
 		});
     }
