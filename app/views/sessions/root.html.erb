@@ -491,13 +491,13 @@
 $(document).on('turbolinks:load',function(){
 
 $("#origin").on('input', function () {
-    var val = this.label;
+    var val = this.value;
     if($('#origin-list option').filter(function(){
-        return this.label === val;        
+        return this.value === val;        
     }).length) {
 	    var selected = $(this).find('option:selected');
 	    // var extra = selected.data('foo');
-        alert(val);
+        alert(selected.val());
     }
 });
 
