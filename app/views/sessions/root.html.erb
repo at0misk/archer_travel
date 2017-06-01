@@ -525,11 +525,11 @@
 			<a role="button" tabindex="0" class="hawaii" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1702&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('hawaii.jpg', :class => "img-responsive") %><div class="description">Hawaii</div></div></a>
 			<a role="button" tabindex="0" class="europe" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1703&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('europe.jpg', :class => "img-responsive") %><div class="description">Europe</div></div></a>
 			<a role="button" tabindex="0" class="hawaii" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1702&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('leisure.jpg', :class => "img-responsive") %><div class="description">Tropical Vacations</div></div></a>
-			<a role="button" tabindex="0" class="luxury"><div class="imgDiv col-md-3"><%= image_tag('luxury.jpg', :class => "img-responsive") %><div class="description">Luxurious Escapes</div></div></a>
+			<a role="button" tabindex="0" class="luxury" href="http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=7" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('luxury.jpg', :class => "img-responsive") %><div class="description">Luxurious Escapes</div></div></a>
 		</div>
 		<div class="row imgRow">
-			<a role="button" tabindex="0" class="short"><div class="imgDiv col-md-3"><%= image_tag('short.jpg', :class => "img-responsive") %><div class="description">Short Getaways</div></div></a>
-			<a role="button" tabindex="0" class="activeDiv"><div class="imgDiv col-md-3"><%= image_tag('active.jpg', :class => "img-responsive") %><div class="description">Active Vacations</div></div></a>
+			<a role="button" tabindex="0" class="short" href="http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=10" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('short.jpg', :class => "img-responsive") %><div class="description">Short Getaways</div></div></a>
+			<a role="button" tabindex="0" class="activeDiv" href="http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('active.jpg', :class => "img-responsive") %><div class="description">Active Vacations</div></div></a>
 			<a role="button" tabindex="0" class="vegas" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=4111&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('vegas.jpg', :class => "img-responsive") %><div class="description">Las Vegas</div></div></a>
 			<a role="button" tabindex="0" class="alaska" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=1705&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('alaska.jpg', :class => "img-responsive") %><div class="description">Alaska</div></div></a>
 		</div>
@@ -880,23 +880,23 @@ $('.myTabs a').click(function (e) {
 // 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 // })
 
-$('.short').click(function(){
-	$('#resultFrame').removeClass('hide');
-	$('#resultFrame').addClass('block');
-	$('#resultFrame').addClass('vaca');
-	$('#resultFrame').removeClass('fareGrab');
-	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=10");
-	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-})
+// $('.short').click(function(){
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').addClass('vaca');
+// 	$('#resultFrame').removeClass('fareGrab');
+// 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=10");
+// 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+// })
 
-$('.activeDiv').click(function(){
-	$('#resultFrame').removeClass('hide');
-	$('#resultFrame').addClass('block');
-	$('#resultFrame').addClass('vaca');
-	$('#resultFrame').removeClass('fareGrab');
-	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063");
-	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-})
+// $('.activeDiv').click(function(){
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').addClass('vaca');
+// 	$('#resultFrame').removeClass('fareGrab');
+// 	$('#resultFrame').attr('src', "http://www1.latesttraveloffers.com/lton/OfferGroups.asp?OfferGroupId=2063");
+// 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+// })
 
 // $('.carribean').click(function(){
 // 	$('#resultFrame').removeClass('hide');
