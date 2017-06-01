@@ -4,6 +4,6 @@ default from: 'notifications@example.com'
 		@name = name
 		@email = email
 		@inquiry = inquiry
-		mail(to: 'ktp925@gmail.com', subject: 'Archer Travel Contact Form')
+		mail(to: 'kevint@archertravel.com', subject: 'Archer Travel Contact Form')
 	end
 end
