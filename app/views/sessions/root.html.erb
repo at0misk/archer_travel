@@ -172,6 +172,10 @@
 		background: transparent;
     	border-color: white;
 	}
+	#hotelButton{
+		background: transparent;
+    	border-color: white;
+	}
 	#multiButton{
 		background: transparent;
     	border-color: white;	
@@ -414,7 +418,45 @@
 	</div>
 </form>
 </div>
-<div role="tabpanel" class="tab-pane" id="hotels">...</div>
+<div role="tabpanel" class="tab-pane" id="hotels">
+	<form id="hotelSearchForm" method="post" action="https://evov2.faregrabbr.com/remotehotelsearchwidget.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate target="resultFrame">
+		<input id="locationType" type="hidden" name="locationType" value="">
+	<div class="form-group">
+	    <label for="place" class="col-lg-4 control-label col-md-6">Origin</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="place" class="form-control" id="place" list="place-list" autocomplete="off">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="checkin" class="col-lg-4 control-label col-md-6">Check In</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="checkin" class="form-control" id="checkin" min="<%= Date.today %>">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="checkout" class="col-lg-4 control-label col-md-6">Check Out</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="checkout" class="form-control" id="checkout" min="<%= Date.today %>">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="numrooms" class="col-lg-4 control-label col-md-6">Rooms</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="number" name="numrooms" class="form-control" id="numrooms" min="1" value="1">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="guests" class="col-lg-4 control-label col-md-6">Guests</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="number" name="guests" class="form-control" id="guests" min="0" value="0">
+		</div>
+	</div>
+	<input type="hidden" name="isWidget" value="true">
+	<div class="form-group col-sm-12 btnDiv">
+		<input type="submit" value="Search" id="hotelButton" class="btn btn-primary btn-sm">
+	</div>
+</form>
+</div>
 <div role="tabpanel" class="tab-pane" id="cars">...</div>
 		  </div>
 
@@ -497,6 +539,7 @@ $("#origin").on('input', function () {
     }).length) {
 	    $('#origin-list option').each(function() {
 	    if($(this).val() == val){
+	    	// change hidden input to "type" for car
 	    	alert($(this).data('foo'));
 		   }
 		});
