@@ -490,21 +490,17 @@
 
 $(document).on('turbolinks:load',function(){
 
-// $("#origin").on('input', function () {
-//     var val = this.value;
-//     if($('#origin-list option').filter(function(){
-//         return this.value === val;        
-//     }).length) {
-// 	    var selected = $('#origin-list').find('option:selected');
-// 	    // var extra = selected.data('foo');
-//         alert(selected.val());
-//     }
-// });
-
-$('#origin-list option').each(function() {
-    if($(this).is(':selected')){
-    	alert($(this).val());
-   }
+$("#origin").on('input', function () {
+    var val = this.value;
+    if($('#origin-list option').filter(function(){
+        return this.value === val;        
+    }).length) {
+	    $('#origin-list option').each(function() {
+	    if($(this).val() == val){
+	    	alert($(this).data('foo'));
+		   }
+		});
+    }
 });
 
 var x = 0;
