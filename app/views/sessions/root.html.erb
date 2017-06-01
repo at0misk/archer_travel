@@ -528,23 +528,59 @@
 <datalist id="dest-list">
 </datalist>
 
+<datalist id="place-list">
+</datalist>
+
 <script type="text/javascript">
 
 $(document).on('turbolinks:load',function(){
 
-$("#origin").on('input', function () {
-    var val = this.value;
-    if($('#origin-list option').filter(function(){
-        return this.value === val;        
-    }).length) {
-	    $('#origin-list option').each(function() {
-	    if($(this).val() == val){
-	    	// change hidden input to "type" for car
-	    	alert($(this).data('foo'));
-		   }
-		});
-    }
+$('#place').keyup(function(e) {
+	if(e.keyCode == 8){
+		if(!$(this).val() || $(this).val().length == 1){
+			$('#place-list').empty();
+		}
+		else{
+			var text = $(this).val();
+			appendDataPlace(text);
+		}
+		// console.log('back')
+	}
+	else{
+		var text = $(this).val();
+		// console.log("key");
+		appendDataPlace(text);
+	}
 });
+
+var appendDataPlace = function(input){
+	$.ajax({
+		type: "GET",
+		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=hotel",
+		success: function(data){
+			$('#place-list').empty();
+			for(var j = 0; j < data.length; j++){
+				console.log(data[j]['description'])
+				var newOption = "<option value='" + data[j]['description'] + "' data-type='wat'>" + data[j]['description'] + "</option>";
+				$('#place-list').append(newOption);
+			}
+		}
+	})
+}
+
+// $("#place").on('input', function () {
+//     var val = this.value;
+//     if($('#origin-list option').filter(function(){
+//         return this.value === val;        
+//     }).length) {
+// 	    $('#origin-list option').each(function() {
+// 	    if($(this).val() == val){
+// 	    	// change hidden input to "type" for car
+// 	    	alert($(this).data('foo'));
+// 		   }
+// 		});
+//     }
+// });
 
 var x = 0;
 
@@ -721,7 +757,7 @@ var appendDataOrigin = function(input){
 			$('#origin-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
-				var newOption = "<option value='" + data[x]['description'] + "' data-foo='wat'>" + data[x]['description'] + "</option>";
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
 				$('#origin-list').append(newOption);
 			}
 		}
