@@ -902,30 +902,33 @@ $('.activeDiv').click(function(){
 // 	$("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
 // })
 
-$("#vacationButton").click(function() {
-	$('#resultFrame').removeClass('hide');
-	$('#resultFrame').addClass('block');
-	$('#resultFrame').addClass('vaca');
-	$('#resultFrame').removeClass('fareGrab');
-    $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-    addCss();
-})
+// Form links for iFrame
+// Now opening in new tab, but keeping incase
 
-$("#flightButton").click(function() {
-	$('#resultFrame').removeClass('hide');
-	$('#resultFrame').addClass('block');
-	$('#resultFrame').addClass('fareGrab');
-    $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-    addCss();
-})
+// $("#vacationButton").click(function() {
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').addClass('vaca');
+// 	$('#resultFrame').removeClass('fareGrab');
+//     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+//     addCss();
+// })
 
-$("#hotelButton").click(function() {
-	$('#resultFrame').removeClass('hide');
-	$('#resultFrame').addClass('block');
-	$('#resultFrame').addClass('fareGrab');
-    $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
-    addCss();
-})
+// $("#flightButton").click(function() {
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').addClass('fareGrab');
+//     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+//     addCss();
+// })
+
+// $("#hotelButton").click(function() {
+// 	$('#resultFrame').removeClass('hide');
+// 	$('#resultFrame').addClass('block');
+// 	$('#resultFrame').addClass('fareGrab');
+//     $("html, body").animate({ scrollTop: $("#resultFrame").offset().top -20}, 500);
+//     addCss();
+// })
 
 <% if session[:hawaii] %>
 	$('.hawaii').click();
