@@ -530,7 +530,7 @@
 		<div class="row imgRow">
 			<a role="button" tabindex="0" class="short"><div class="imgDiv col-md-3"><%= image_tag('short.jpg', :class => "img-responsive") %><div class="description">Short Getaways</div></div></a>
 			<a role="button" tabindex="0" class="activeDiv"><div class="imgDiv col-md-3"><%= image_tag('active.jpg', :class => "img-responsive") %><div class="description">Active Vacations</div></div></a>
-			<a role="button" tabindex="0" class="vegas"><div class="imgDiv col-md-3"><%= image_tag('vegas.jpg', :class => "img-responsive") %><div class="description">Las Vegas</div></div></a>
+			<a role="button" tabindex="0" class="vegas" href="http://www1.latesttraveloffers.com/lton/SearchLoading.asp?SearchId=4111&TargetType=Hot+Destinations" target="_blank"><div class="imgDiv col-md-3"><%= image_tag('vegas.jpg', :class => "img-responsive") %><div class="description">Las Vegas</div></div></a>
 			<a role="button" tabindex="0" class="alaska"><div class="imgDiv col-md-3"><%= image_tag('alaska.jpg', :class => "img-responsive") %><div class="description">Alaska</div></div></a>
 		</div>
 	</div>
@@ -830,6 +830,9 @@ $('.myTabs a').click(function (e) {
 // })
 
 // Search By Destination
+
+// Old iFrame animations
+// Not using but keeping incase
 
 $('.vegas').click(function(){
 	$('iframe')
