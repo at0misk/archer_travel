@@ -495,9 +495,9 @@ $("#origin").on('input', function () {
     if($('#origin-list option').filter(function(){
         return this.data('foo') === val;        
     }).length) {
-	    var selected = $(this).find('#origin-list option');
+	    var selected = $('#origin').find('#origin-list option:selected');
 	    // var extra = selected.data('foo');
-        alert(val);
+        alert(selected.val());
     }
 });
 
