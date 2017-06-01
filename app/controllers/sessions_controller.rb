@@ -26,7 +26,8 @@ class SessionsController < ApplicationController
 	def terms
 	end
 	def send_mail
-		# Placeholder - use mailer here
+		UserMailer.contact_mail(params['name'], params['email'], params['inquiry']).deliver_now
+		flash[:sent] = "Thank you!  Your message has been sent."
 		redirect_to '/contact'
 	end
 	def hawaii

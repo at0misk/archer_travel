@@ -136,6 +136,13 @@
 				    </div>
 				</div>
 			</form>
+			<% if flash[:sent] %>
+				<div class="row">
+					<div class="col-sm-12">
+					<p><%= flash[:sent] %></p>
+					</div>
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
