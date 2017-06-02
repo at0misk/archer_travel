@@ -645,6 +645,9 @@
 <datalist id="place-list">
 </datalist>
 
+<datalist id="pickup-list">
+</datalist>
+
 <script type="text/javascript">
 
 $(document).on('turbolinks:load',function(){
@@ -842,6 +845,39 @@ $('#air_type').change(function(){
 })
 
 // Autocomplete AJAX Calls
+
+$('#pickup_location').keyup(function(e) {
+	if(e.keyCode == 8){
+		if(!$(this).val() || $(this).val().length == 1){
+			$('#pickup-list').empty();
+		}
+		else{
+			var text = $(this).val();
+			appendDataPickup(text);
+		}
+		// console.log('back')
+	}
+	else{
+		var text = $(this).val();
+		// console.log("key");
+		appendDataPickup(text);
+	}
+});
+
+var appendDataPickup = function(input){
+	$.ajax({
+		type: "GET",
+		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=car",
+		success: function(data){
+			$('#origin-list').empty();
+			for(var x = 0; x < data.length; x++){
+				console.log(data[x]['description'])
+				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
+				$('#pickup-list').append(newOption);
+			}
+		}
+	})
+}
 
 $('#origin').keyup(function(e) {
 	if(e.keyCode == 8){
