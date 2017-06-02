@@ -30,7 +30,6 @@ class SessionsController < ApplicationController
 		redirect_to '/contact'
 	end
 	def faregrabbr
-
-		render :layout => false
+		:layout => false
 	end
 end
