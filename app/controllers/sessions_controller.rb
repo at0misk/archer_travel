@@ -29,4 +29,8 @@ class SessionsController < ApplicationController
 		flash[:sent] = "Thank you!  Your message has been sent."
 		redirect_to '/contact'
 	end
+	def faregrabbr
+
+		render :layout => false
+	end
 end
