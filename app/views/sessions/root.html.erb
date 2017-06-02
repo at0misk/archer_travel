@@ -222,7 +222,13 @@
 	.descriptionP{
 		text-align: justify;
 	}
-
+	.dropoffCont{
+		text-align: center;
+	}
+	.tiny-dropoff{
+		margin-top: 1%;
+		font-size: 0.8em;
+	}
 /* iPads (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
 
@@ -487,7 +493,7 @@
 	<input type="hidden" name="pickup_locationType" value="Airport">
 	<div class="form-group">
 	    <label for="dropoff_location" class="col-lg-4 control-label col-md-6">Dropoff Airport Code</label>
-	    <div class="col-lg-8 col-md-6">
+	    <div class="col-lg-8 col-md-6 dropoffCont">
 			<input type="text" name="dropoff_location" class="form-control" id="dropoff_location" list="dropoff-list" autocomplete="off">
 			<span class="tiny-dropoff">(if different from pickup location)</span>
 		</div>
