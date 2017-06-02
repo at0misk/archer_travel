@@ -869,7 +869,7 @@ var appendDataPickup = function(input){
 		type: "GET",
 		url: "https://evov2.faregrabbr.com/remoteautocomplete_places.php?text=" + input + "&type=car",
 		success: function(data){
-			$('#origin-list').empty();
+			$('#pickup-list').empty();
 			for(var x = 0; x < data.length; x++){
 				console.log(data[x]['description'])
 				var newOption = "<option value='" + data[x]['description'] + "'>" + data[x]['description'] + "</option>";
