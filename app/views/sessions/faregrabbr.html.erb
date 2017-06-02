@@ -1,3 +1,222 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ArcherTravel</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet'  type='text/css'>
+  <style type="text/css">
+  html{
+  	overflow-x: hidden;
+  }
+
+body {
+	font-family: 'Droid Sans', sans-serif;
+}
+  /*Ghost CSS*/
+/*  * {
+  background: #000 !important;
+  color: #0f0 !important;
+  outline: solid #f00 1px !important;
+}*/
+  	@media (max-width: 767px) {
+  		body {
+  			padding-right: 0px;
+  			padding-left: 0px;
+  		}
+  	}
+  	.navbar{
+  		transition: all 0.3s;
+  	}
+  	.yieldContainer{
+  		margin-bottom: 5%;
+  	}
+  	.navbar-default{
+  		background: transparent;
+  		border: none;
+  		box-shadow: none;
+  		-webkit-box-shadow: none;
+  	}
+  	.down{
+  		opacity: 0;
+  	}
+  	#navbar a{
+  		color: white;
+  	}
+    .navbar-brand{
+  		color: white !important;
+  	}
+  	nav a:hover{
+  		opacity: 0.8;
+  	}
+  	.up{
+  		background: white;
+  		border-bottom: 1px solid #e7e7e7;
+  	}
+  	.upColor{
+  		color: #777 !important;
+  	}
+    html {
+      position: relative;
+    min-height: 100%;
+  }
+  body{
+    height: 100%;
+    padding-bottom: 100px;
+  }
+    footer{
+      /*background-color: #0275d8;*/
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 5%;
+      height: 100px;
+    }
+    .logo img{
+    	display: inline-block;
+    	width: 250px;
+    }
+    .fa{
+    	font-size: 22px;
+    	margin-left: 11px;
+    }
+    .rightFooter{
+	    bottom: 0px;
+	    position: absolute;
+	    right: 0;
+    	text-align: right;
+    }
+    .copy p{
+    	margin: 0px;
+    }
+    .copy{
+    	margin-top: 5px;
+    	font-size: 11px;
+    }
+    .footerCont a{
+    	transition: all 0.3s;
+    	color: #333;
+    }
+    .footerCont a:hover{
+    	opacity: 0.8;
+    }
+    .footerLinks a:hover{
+    	text-decoration: none;
+    }
+    .footerCont{
+    	bottom: 15px;
+    	position: relative;
+    }
+    .dropdownA{
+    	color: #333 !important;
+    }
+    .dropdown-toggle:active, .open .dropdown-toggle {
+        background:#FFF !important; 
+        color:#333 !important;
+    }
+
+@media (max-width : 991px){
+  .imgRow{
+    margin-top: 2% !important;
+  }
+  .navbar-brand{
+    display: none;
+  }
+  #myTabs{
+    font-size: 0.8em;
+  }
+  .landingRow{
+    height: auto !important;
+  }
+  .formDiv{
+    height: auto !important;
+  }
+  .price{
+    font-size: 15px;
+  }
+  .description{
+    font-size: 1em !important;
+  }
+  .discover{
+    font-size: 1.5em !important;
+  }
+  .imgDiv{
+    display: inline-block;
+    width: 20% !important;
+  }
+}
+
+@media (max-width : 767px){
+  .navbar-toggle{
+    background: white;
+  }
+  .navbar-collapse{
+    background: white;
+  }
+  .navbar-collapse ul li a{
+    color: #777 !important;
+  }
+  .navbar-header{
+    background: white;
+  }
+  .navbar-brand{
+    display: block;
+    color: #777 !important;
+  }
+  .logoSpan img{
+    width: 50% !important;
+  }
+  #myTabs{
+    font-size: 1em;
+  }
+  .formDiv{
+    height: auto !important;
+  }
+  .secondDiv p{
+    padding: 0% 15%;
+    margin-bottom: 5%;
+  }
+  .price{
+    font-size: 28px;
+  }
+  .thirdCont{
+    padding: 5%;
+  }
+  .imgDiv{
+    width: 40% !important;
+  }
+}
+
+@media (max-width : 688px){
+  .rightFooter{
+    position: relative;
+    text-align: center;
+    float: none;
+  }
+}
+
+@media (max-width : 422px){
+  #myTabs{
+    font-size: 0.8em;
+  }
+}
+  </style>
+  </head>
 <style type="text/css">
 /** {
   background: #000 !important;
@@ -243,6 +462,8 @@
 }
 
 </style>
+<body>
+<div class="container">
 <div class="row landingRow">
 	<div class="container">
 		<div class="col-sm-6 landingDiv">
@@ -589,7 +810,7 @@
 		</div>
 	</div>
 </div>
-
+</div>
 
 <datalist id="origin-list">
 </datalist>
@@ -605,7 +826,8 @@
 
 <datalist id="dropoff-list">
 </datalist>
-
+</body>
+</html>
 <script type="text/javascript">
 
 $(document).on('turbolinks:load',function(){
