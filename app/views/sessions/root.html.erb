@@ -278,7 +278,7 @@
 	</div>
 	<div class="form-group">
 	    <label for="srchDestText1" class="col-lg-4 control-label col-md-6">Destination</label>
-	    <div class="col-lg-8 dest col-md-6">
+	    <div class="col-lg-8 dest col-md-6 dropoffCont">
 			<select name="srchDestText1" class="VP-SearchInput form-control" onchange="document.VPSearchForm.srchDestText2.value='';">
 				<option value="">Any Destination</option>
 				<option value="Africa">Africa</option>
@@ -319,9 +319,9 @@
 				<option value="Eastern US">USA (Eastern)</option>
 				<option value="Western US">USA (Western)</option>
 			</select>
+			<span class="tiny-dropoff">(if different from pickup location)</span>
 		</div>
 	</div>
-	<div class="or">or</div>
 	<div class="form-group">
 	    <label for="srchDestText2" class="col-lg-4 control-label col-md-6">Type in Destination</label>
 	    <div class="col-lg-8 col-md-6">
