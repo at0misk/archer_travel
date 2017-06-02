@@ -180,6 +180,10 @@
 		background: transparent;
     	border-color: white;	
 	}
+	#carButton{
+		background: transparent;
+    	border-color: white;	
+	}
 	.button-show{
 		display: inline-block;
 	}
@@ -471,7 +475,53 @@
 	</div>
 </form>
 </div>
-<div role="tabpanel" class="tab-pane" id="cars">...</div>
+<div role="tabpanel" class="tab-pane" id="cars">
+		<form id="carSearchForm" method="post" action="https://evov2.faregrabbr.com/remotecarsearchwidget.php?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjoiYXJjaGVyX2FwaUBmYXJlZ3JhYmJyLmNvbSIsImlzc3VlX3RpbWUiOiIyMDE3LTA1LTMwIDIyOjA5OjAzIiwiaXAiOiI3My4yMjMuMTg1LjUwIn0.g-7nfu7AzzO6dToyu3o6cc6T9BynnCXz3Tc26_2lT9g" novalidate target="_blank">
+		<input id="locationType" type="hidden" name="locationType" value="">
+	<div class="form-group">
+	    <label for="pickup_location" class="col-lg-4 control-label col-md-6">Pickup Airport Code</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="pickup_location" class="form-control" id="pickup_location" list="pickup-list" autocomplete="off">
+		</div>
+	</div>
+	<input type="hidden" name="pickup_locationType" value="Airport">
+	<div class="form-group">
+	    <label for="dropoff_location" class="col-lg-4 control-label col-md-6">Dropoff Airport Code</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="text" name="dropoff_location" class="form-control" id="dropoff_location" list="dropoff-list" autocomplete="off">
+		</div>
+	</div>
+	<input type="hidden" name="dropoff_locationType" value="Airport">
+	<div class="form-group">
+	    <label for="pickup_date" class="col-lg-4 control-label col-md-6">Pickup Date</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="pickup_date" class="form-control" id="pickup_date" min="<%= Date.today %>">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="pickup_time" class="col-lg-4 control-label col-md-6">Pickup Time</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="time" name="pickup_time" class="form-control" id="pickup_time">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="dropoff_date" class="col-lg-4 control-label col-md-6">Dropoff Date</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="date" name="dropoff_date" class="form-control" id="dropoff_date" min="<%= Date.today %>">
+		</div>
+	</div>
+	<div class="form-group">
+	    <label for="dropoff_time" class="col-lg-4 control-label col-md-6">Dropoff Time</label>
+	    <div class="col-lg-8 col-md-6">
+			<input type="time" name="dropoff_time" class="form-control" id="dropoff_time">
+		</div>
+	</div>
+	<input type="hidden" name="isWidget" value="true">
+	<div class="form-group col-sm-12 btnDiv">
+		<input type="submit" value="Search" id="carButton" class="btn btn-primary btn-sm">
+	</div>
+</form>
+</div>
 		  </div>
 
 </div>
